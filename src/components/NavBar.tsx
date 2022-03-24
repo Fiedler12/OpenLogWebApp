@@ -5,14 +5,18 @@ const NavBar = () => {
     return (
         <AppBar position="static">
             <Toolbar>
+                
                 <IconButton>
                     <Link to="/">Home</Link>
                 </IconButton>
                 <IconButton>
-                    <Link to="/">AboutUs</Link>
+                    <Link to="/about-us">AboutUs</Link>
                 </IconButton>
                 <IconButton>
-                    <Link to="/">LogCycle</Link>
+                    <Link to="/log-cycle">LogCycle</Link>
+                </IconButton>
+                <IconButton>
+                    <Link to="/Settings">Settings</Link>
                 </IconButton>
             </Toolbar>
         </AppBar>
