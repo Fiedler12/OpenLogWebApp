@@ -1,11 +1,12 @@
 import { AppBar, Avatar, IconButton, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
 
+
 const NavBar = () => {
     return (
     
-        <AppBar position="static">
-
+        <AppBar position="static" >
+        
             <Toolbar>
                 <IconButton>
                 <Link to="/">
