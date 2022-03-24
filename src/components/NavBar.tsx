@@ -8,6 +8,12 @@ const NavBar = () => {
                 <IconButton>
                     <Link to="/">Home</Link>
                 </IconButton>
+                <IconButton>
+                    <Link to="/">AboutUs</Link>
+                </IconButton>
+                <IconButton>
+                    <Link to="/">LogCycle</Link>
+                </IconButton>
             </Toolbar>
         </AppBar>
     )
