@@ -3,7 +3,7 @@ import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
 import { Layout } from './pages/Layout';
 import {LogCycle} from './pages/LogCycle' ;
-import {LoginPage} from './pages/LoginPage'; 
+import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
 
 function App() {

@@ -1,7 +1,14 @@
 import React from 'react'
+import Login from '../components/Login'
+import Logout from '../components/Logout'
 
-export const LoginPage = () => {
+function LoginPage() {
   return (
-    <div>LogCycle</div>
-  )
+    <div className="LoginPage">
+      <Login />
+      <Logout />
+    </div>
+  );
 }
+
+export default LoginPage;
