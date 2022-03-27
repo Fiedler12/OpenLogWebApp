@@ -3,6 +3,7 @@ import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
 import { Layout } from './pages/Layout';
 import {LogCycle} from './pages/LogCycle' ;
+import {LoginPage} from './pages/LoginPage'; 
 
 //testing push
 function App() {
@@ -13,7 +14,8 @@ function App() {
           <Route index element={<Home />} /> 
           <Route path="about-us" element={<AboutUs />} />
           <Route path="log-cycle" element={<LogCycle />} />
-          
+          <Route path="login" element={<LoginPage />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
