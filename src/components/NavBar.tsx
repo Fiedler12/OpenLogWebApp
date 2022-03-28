@@ -29,6 +29,10 @@ const NavBar = () => {
                 <IconButton>
                     <Link to="/Settings">Settings</Link>
                 </IconButton>
+
+                <IconButton>
+                    <Link to="/Login">Login</Link>
+                </IconButton>
             </Toolbar>
         </AppBar>
     )
