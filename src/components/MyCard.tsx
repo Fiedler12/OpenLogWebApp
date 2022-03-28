@@ -1,4 +1,5 @@
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material'
+import { Link } from "react-router-dom";
 import React from 'react'
 
 interface MyCardProps {
@@ -9,7 +10,7 @@ interface MyCardProps {
 export const MyCard = ({title, description}: MyCardProps) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
-    <CardActionArea>
+    <CardActionArea href="log-overview">
       <CardMedia
         component="img"
         height="140"
