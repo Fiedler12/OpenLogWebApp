@@ -1,30 +1,50 @@
-import React from 'react'
-import {GoogleLogin} from 'react-google-login'
+import React, {useState} from 'react'
+import {GoogleLogin, GoogleLogout} from 'react-google-login'
 
 const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
 
 function Login(){ 
-  const onSuccess = (res: any ) => {
+
+  const [showloginButton, setShowloginButton]  = useState(true);
+  const [showlogoutButton, setShowlogoutButton]  = useState(false);
+  
+  const onLoginSuccess = (res: any ) => {
       console.log('[Login Success] currentUser:', res.profileObj);
+      setShowloginButton(false);
+      setShowlogoutButton(true);
   };
 
-  const onFailure = (res: any) => {
+  const onLoginFailure = (res: any) => {
     console.log('[Login failed] res:', res);
   };
 
-  return (
-      <div>
+  const onLogoutSuccess = () => {
+    alert('Logout made successfull') ;
+    console.clear();
+    setShowloginButton(true);
+    setShowlogoutButton(false);
+};
+
+return (
+    <div>
+        { showloginButton ?
           <GoogleLogin
             clientId={clientId}
-            buttonText="Login"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
+            buttonText="Sing in"
+            onSuccess={onLoginSuccess}
+            onFailure={onLoginFailure}
             cookiePolicy={'single_host_origin'}
-            style={{marginTop: '100px' }}
             isSignedIn={true}
-          />
+          /> : null }
+        
+        { showlogoutButton ?
+          <GoogleLogout
+            clientId={clientId}
+            buttonText="Logout"
+            onLogoutSuccess={onLogoutSuccess}
+        /> : null }
       </div>
-  )
+  );
 }
 
 export default Login;
