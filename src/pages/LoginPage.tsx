@@ -6,7 +6,6 @@ function LoginPage() {
   return (
     <div className="LoginPage">
       <Login />
-      <Logout />
     </div>
   );
 }
