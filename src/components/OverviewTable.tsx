@@ -17,15 +17,15 @@ function createData(
 
 const rows = [ 
     createData(3, 18, "01-01-2022"),
-    createData(3, 18, "02-01-2022"),
-    createData(3, 18, "03-01-2022"),
-    createData(3, 18, "04-01-2022"),
-    createData(3, 18, "05-01-2022"),
-    createData(3, 18, "06-01-2022"),
-    createData(3, 18, "07-01-2022"),
-    createData(3, 18, "08-01-2022"),
-    createData(3, 18, "08-01-2022"),
-    createData(3, 18, "09-01-2022"),
+    createData(3, 14, "02-01-2022"),
+    createData(3, 15, "03-01-2022"),
+    createData(3, 16, "04-01-2022"),
+    createData(3, 17, "05-01-2022"),
+    createData(3, 12, "06-01-2022"),
+    createData(3, 19, "07-01-2022"),
+    createData(3, 11, "08-01-2022"),
+    createData(3, 10, "08-01-2022"),
+    createData(3, 20, "09-01-2022"),
 ];
 
 export default function OverviewTable() {
