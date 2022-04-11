@@ -1,12 +1,13 @@
 .header{
     text-align: center;
-    height: 20px;
+    height: 35px;
+    font-size: 50px;
 }
 
 .text{
     border: 0ch;
     text-align: center;
-    font-size: 10px;
+    font-size: 20px;
 
 }
 
@@ -23,8 +24,8 @@
     display: flex;
     margin: auto;
     text-align: center;
-  
-
+    letter-spacing:.10rem;
+    
 }
 .listtext{
     text-align: center;

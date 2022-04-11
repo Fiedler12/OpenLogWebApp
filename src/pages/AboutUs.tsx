@@ -17,7 +17,37 @@ export const AboutUs = () => {
 
 
 
-     <div >
+     <div className='color' >
+       <ul>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+       </ul>
+       <ul>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+       </ul>
+       <ul>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+         <li>item1</li>
+       </ul>
       
      </div>
      
