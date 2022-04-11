@@ -1,11 +1,12 @@
 import { AppBar, Avatar, IconButton, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
-
+//import styles from "./";
+import './Colorstyle.css';
 
 const NavBar = () => {
     return (
     
-        <AppBar position="static" >
+        <AppBar position="static" className="bigblue" >
         
             <Toolbar>
                 <IconButton>
@@ -37,5 +38,7 @@ const NavBar = () => {
         </AppBar>
     )
 }
+
+
 
 export default NavBar;
