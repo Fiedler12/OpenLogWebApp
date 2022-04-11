@@ -1,0 +1,32 @@
+.header{
+    text-align: center;
+    height: 20px;
+}
+
+.text{
+    border: 0ch;
+    text-align: center;
+    font-size: 10px;
+
+}
+
+.image{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    display: block;
+}
+
+.color{
+    background-color: gray;
+    flex-direction: row;
+    display: flex;
+    margin: auto;
+    text-align: center;
+  
+
+}
+.listtext{
+    text-align: center;
+}
+
