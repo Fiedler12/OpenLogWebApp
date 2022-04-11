@@ -26,12 +26,17 @@ const rows = [
     createData(3, 11, "08-01-2022"),
     createData(3, 10, "08-01-2022"),
     createData(3, 20, "09-01-2022"),
+    createData(3, 12, "10-01-2022"),
+    createData(3, 19, "11-01-2022"),
+    createData(3, 11, "12-01-2022"),
+    createData(3, 10, "13-01-2022"),
+    createData(3, 20, "14-01-2022"),
 ];
 
 export default function OverviewTable() {
     return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 300, maxWidth: 350 }} aria-label="simple table">
+        <TableContainer className="overviewTable" component={Paper}>
+            <Table id="fix-head" sx={{ maxWidth: 400 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Amount logged</TableCell>

@@ -15,3 +15,11 @@ code {
   display:flex;
   flex-direction:row;
 }
+.overviewTable {
+  overflow-y: scroll;
+  max-height: 600px;
+}
+.fix-head {
+  position: fixed;
+  top: 0px; display: none;
+}
