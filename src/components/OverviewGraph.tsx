@@ -1,5 +1,5 @@
 import React from 'react'
-import { CartesianGrid, LineChart, Line, XAxis } from 'recharts';
+import { CartesianGrid, LineChart, Line, XAxis, YAxis } from 'recharts';
 
 function createData(
     id: number,
@@ -20,6 +20,11 @@ const data = [
     createData(3, 11, "08-01-2022"),
     createData(3, 10, "08-01-2022"),
     createData(3, 20, "09-01-2022"),
+    createData(3, 12, "10-01-2022"),
+    createData(3, 19, "11-01-2022"),
+    createData(3, 11, "12-01-2022"),
+    createData(3, 10, "13-01-2022"),
+    createData(3, 20, "14-01-2022"),
 ]
 
 
@@ -32,6 +37,7 @@ export const OverviewGraph = () => {
             margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
         >
             <XAxis dataKey="date" />
+            <YAxis dataKey="amount" />
             <CartesianGrid stroke="#f5f5f5" />
             <Line type="monotone" dataKey="amount" stroke="#ff7300" yAxisId={0} />
         </LineChart>
