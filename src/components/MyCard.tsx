@@ -9,21 +9,14 @@ interface MyCardProps {
 
 export const MyCard = ({title, description}: MyCardProps) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: 275 }}>
     <CardActionArea href="log-overview">
-      <CardMedia
-        component="img"
-        height="140"
-        image="../logo192.png  "
-        alt="green iguana"
-      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {title || 'Lizard'}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {title}
+          <Typography variant="body2" color="text.secondary">
+          {description}
+          </Typography>
         </Typography>
       </CardContent>
     </CardActionArea>
