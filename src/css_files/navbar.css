@@ -1,0 +1,24 @@
+.logo{
+    width: 60%;
+  }
+.accountlogo{
+    width: 20%;
+}
+
+.menu{
+    background-color: white;
+    border: none;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 60%;
+    text-decoration: none;
+  
+  }
+  .bigblue {
+    background-color: gray!important;
+    font-family: Sans-Serif;
+    text-align: center;
+  }

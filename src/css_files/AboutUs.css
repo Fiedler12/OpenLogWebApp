@@ -1,12 +1,13 @@
 .header{
     text-align: center;
-    height: 20px;
+    height: 35px;
+    font-size: 50px;
 }
 
 .text{
     border: 0ch;
     text-align: center;
-    font-size: 10px;
+    font-size: 20px;
 
 }
 
@@ -17,16 +18,25 @@
     display: block;
 }
 
-.color{
+.format{
     background-color: gray;
     flex-direction: row;
     display: flex;
     margin: auto;
     text-align: center;
-  
-
-}
-.listtext{
-    text-align: center;
 }
 
+.container {
+    column-width: 35em;
+    list-style: none;
+}
+
+.text2{
+    font-size: 20px;
+    font-weight: bold;
+}
+.roundimg{
+    border-radius: 50%;
+    width: 10%;
+
+}
