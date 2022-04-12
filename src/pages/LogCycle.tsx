@@ -27,7 +27,10 @@ export const LogCycle = () => {
 
   return (
     <Grid container>
-<BasicCard></BasicCard>
+      <Grid>
+        <BasicCard></BasicCard>
+        </Grid>
+
 
     </Grid>
     
