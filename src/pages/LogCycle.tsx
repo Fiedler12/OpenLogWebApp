@@ -1,50 +1,42 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 import ListExample from '../components/ListExample'
-
+import { Card, Container, Grid } from '@mui/material'
+import { Button } from '@mui/material'
+import BasicCard from '../components/LogCyckleCard'
 
 function createData(
   id: number,
-  name: string,
-  unit: string
+  name: string
 ) {
-  return {id, name, unit}; 
+  return {id, name}; 
 }
 
-const values = [
-  createData(1, "blodsukker", "units"),
-  createData(2, "blodsukker", "units"),
-  createData(3, "blodsukker", "units"),
-  createData(4, "blodsukker", "units"),
-  createData(5, "blodsukker", "units"),
-  createData(6, "blodsukker", "units"),
-  createData(7, "blodsukker", "units"),
-  createData(8, "blodsukker", "units"),
-  createData(9, "blodsukker", "units"),
+function addData(
+  id: number,
+  name: string) {
+    data.push(createData(id, name))
+  }
 
-]
-
+  let data = [
+    createData(1, "John Doe"),
+    createData(2, "Victor Wayne"),
+    createData(3, "Jane Doe"),
+  ];
 export const LogCycle = () => {
+
   return (
+    <Grid container>
+<BasicCard></BasicCard>
+
+    </Grid>
     
-    <div>LogCycle
-      <div> 
-        <select>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        
-        </select>
-        <input type="text" />
-      </div>
-    </div>
     
   
   )
 }
 
-const nameid = [ 'bruce', "mango", "banana","James"]
+
 
 
 

@@ -3,10 +3,9 @@ import React from 'react'
 import '../css_files/AboutUs.css';
 import img from '../Pictures/App.png';
 
-
-
 export const AboutUs = () => {
   return (
+
     <div>
       <h1 className='header'>What is OpenLog</h1>
       <p className='text'>OpenLog allows you to log and keep track

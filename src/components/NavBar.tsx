@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 //import styles from "./";
 import './Colorstyle.css';
 
+
+
+
 const NavBar = () => {
     return (
     
-        <AppBar position="static" className="bigblue" >
+        <AppBar position="static" className="bigblue" sx={{ height: '90px' }}  >
         
             <Toolbar>
                 <IconButton>

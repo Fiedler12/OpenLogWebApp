@@ -7,8 +7,10 @@ import { LogOverview } from './pages/LogOverview';
 import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
 
+
 //testing push
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
