@@ -1,6 +1,9 @@
-.dark{
+.logo{
     width: 60%;
   }
+.accountlogo{
+    width: 20%;
+}
 
 .menu{
     background-color: white;

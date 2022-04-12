@@ -9,7 +9,7 @@ const NavBar = () => {
             <Toolbar>
                 <IconButton>
                 <Link to="/">
-                <img src="../Logo.png " className="dark"> 
+                <img src="../Logo.png " className="logo"> 
                 </img></Link>
                 </IconButton>
 
@@ -32,6 +32,11 @@ const NavBar = () => {
                 <button className="menu">
                     <Link to="/Login" style={{textDecoration: 'none'}}>Login</Link>
                 </button>
+                <IconButton >
+                <Link to="/">
+                <img src="../account.png " className="accountlogo"> 
+                </img></Link>
+                </IconButton>
             </Toolbar>
         </AppBar>
     )
