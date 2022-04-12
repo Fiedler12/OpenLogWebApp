@@ -2,7 +2,12 @@
     width: 60%;
   }
 .accountlogo{
-    width: 20%;
+    width: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+
 }
 
 .menu{

@@ -36,7 +36,7 @@ const NavBar = () => {
                     <Link to="/Login" style={{textDecoration: 'none'}}>Login</Link>
                 </button>
                 <IconButton >
-                <Link to="/">
+                <Link to="/Settings">
                 <img src="../account.png " className="accountlogo"> 
                 </img></Link>
                 </IconButton>
