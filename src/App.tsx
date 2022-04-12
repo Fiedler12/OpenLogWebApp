@@ -6,6 +6,7 @@ import {LogCycle} from './pages/LogCycle' ;
 import { LogOverview } from './pages/LogOverview';
 import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
+import { AddNewLog } from './pages/AddNewLog';
 
 
 //testing push
@@ -21,6 +22,7 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="settings" element={<Settings/>}/>
           <Route path='log-overview' element={<LogOverview />} />
+          <Route path='add-new-log' element={<AddNewLog />} />
         </Route>
       </Routes>
     </BrowserRouter>
