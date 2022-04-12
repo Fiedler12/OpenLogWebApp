@@ -2,6 +2,9 @@ import { AppBar, Avatar, IconButton, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
 import '../css_files/navbar.css'
 
+
+
+
 const NavBar = () => {
     return (
     

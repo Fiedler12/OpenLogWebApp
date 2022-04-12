@@ -8,8 +8,10 @@ import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
 import { AddNewLog } from './pages/AddNewLog';
 
+
 //testing push
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
