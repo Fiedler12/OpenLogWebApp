@@ -1,39 +1,37 @@
 import { AppBar, Avatar, IconButton, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
-//import styles from "./";
-import './Colorstyle.css';
+import '../css_files/navbar.css'
 
 const NavBar = () => {
     return (
     
-        <AppBar position="static" className="bigblue" >
-        
+        <AppBar position="static" className="bigblue" sx={{height:'100px'}} color="primary">
             <Toolbar>
                 <IconButton>
                 <Link to="/">
-                <img src="../Logo.png"> 
+                <img src="../Logo.png " className="dark"> 
                 </img></Link>
                 </IconButton>
 
-                <IconButton>
-                    <Link to="/">Home</Link>
-                </IconButton>
+                <button className="menu">
+                    <Link to="/" style={{textDecoration: 'none'}}>Home</Link>
+                </button>
 
-                <IconButton>
-                    <Link to="/about-us">AboutUs</Link>
-                </IconButton>
+                <button className="menu">
+                    <Link to="/about-us" style={{textDecoration: 'none'}}>AboutUs</Link>
+                </button>
 
-                <IconButton>
-                    <Link to="/log-cycle">LogCycle</Link>
-                </IconButton>
+                <button className="menu">
+                    <Link to="/log-cycle" style={{textDecoration: 'none'}}>LogCycle</Link>
+                </button>
 
-                <IconButton>
-                    <Link to="/Settings">Settings</Link>
-                </IconButton>
+                <button className="menu">
+                    <Link to="/Settings" style={{textDecoration: 'none'}}>Settings</Link>
+                </button>
 
-                <IconButton>
-                    <Link to="/Login">Login</Link>
-                </IconButton>
+                <button className="menu">
+                    <Link to="/Login" style={{textDecoration: 'none'}}>Login</Link>
+                </button>
             </Toolbar>
         </AppBar>
     )
