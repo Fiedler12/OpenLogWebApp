@@ -9,17 +9,13 @@ const NavBar = () => {
     return (
         <AppBar position="static" className="bigblue" sx={{height:'100px'}} >
             <Toolbar>
-                <Box sx={{ flexGrow: 1}}>  
                 <IconButton  edge="start" >
                 <Link to="/">
                 <img src="../Logo.png " className="logo"> 
                 </img></Link>
                 </IconButton>
                 <Button color="inherit">Login</Button>
-                </Box>
-
-
-                <Box>
+                
                 <button className="menu">
                     <Link to="/" style={{textDecoration: 'none'}}>Home</Link>
                 </button>
@@ -39,12 +35,12 @@ const NavBar = () => {
                 <button className="menu">
                     <Link to="/Login" style={{textDecoration: 'none'}}>Login</Link>
                 </button>
-                <IconButton>
-                <Link to="/">
+                <IconButton >
+                <Link to="/Settings">
                 <img src="../account.png " className="accountlogo"> 
                 </img></Link>
                 </IconButton>
-                </Box>  
+                 
             </Toolbar>
         </AppBar>
         

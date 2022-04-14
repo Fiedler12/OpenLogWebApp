@@ -26,6 +26,7 @@ function addData(
 export const LogCycle = () => {
 
   return (
+<<<<<<< Updated upstream
     <Grid container>
       <Grid>
         <BasicCard></BasicCard>
@@ -36,7 +37,13 @@ export const LogCycle = () => {
     
     
   
+=======
+    <div>LogCycle</div>
+    
+    
+>>>>>>> Stashed changes
   )
+  
 }
 
 
