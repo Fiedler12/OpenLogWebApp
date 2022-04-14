@@ -1,50 +1,52 @@
+import { Google, LineAxisOutlined } from '@mui/icons-material';
 import React, {useState} from 'react'
+import axios, { AxiosResponse } from "axios";
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 
-const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
-
-function Login(){ 
-
-  const [showloginButton, setShowloginButton]  = useState(true);
-  const [showlogoutButton, setShowlogoutButton]  = useState(false);
-  
-  const onLoginSuccess = (res: any ) => {
-      console.log('[Login Success] currentUser:', res.profileObj);
-      setShowloginButton(false);
-      setShowlogoutButton(true);
-  };
-
-  const onLoginFailure = (res: any) => {
-    console.log('[Login failed] res:', res);
-  };
-
-  const onLogoutSuccess = () => {
-    alert('Logout made successfull') ;
-    console.clear();
-    setShowloginButton(true);
-    setShowlogoutButton(false);
-};
-
-return (
-    <div>
-        { showloginButton ?
-          <GoogleLogin
-            clientId={clientId}
-            buttonText="Sing in"
-            onSuccess={onLoginSuccess}
-            onFailure={onLoginFailure}
-            cookiePolicy={'single_host_origin'}
-            isSignedIn={true}
-          /> : null }
-        
-        { showlogoutButton ?
-          <GoogleLogout
-            clientId={clientId}
-            buttonText="Logout"
-            onLogoutSuccess={onLogoutSuccess}
-        /> : null }
-      </div>
-  );
+interface AuthReponse {
+  token: string;
+  user: User;
 }
 
-export default Login;
+interface User {
+  _id: string;
+  name: string;
+  email: string;
+  avatar: string;
+}
+
+const GoogleAuth = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const onSuccess = async (res:any) =>  {
+    try {
+      const result: AxiosResponse<AuthReponse> = await axios.post("/auth/", {
+        token: res?.tokenId,
+      });
+    }
+    catch (err) {
+      console.log(err);
+    }
+  };
+
+return (
+  <div className="h-screen w-screen flex items-center justify-center flex-col">
+    {!user && (
+      <GoogleLogin
+        clientId={`${process.env.REACT_APP_CLIENT_ID}`}
+        onSuccess={onSuccess}
+      />
+    )}
+
+    {user && (
+      <>
+        <img src={user.avatar} className="rounded-full" />
+        <h1 className="text-xl font-semibold text-center my-5">
+          {user.name}
+        </h1>
+      </>
+    )}
+  </div> 
+  );
+};
+
+export default GoogleAuth;

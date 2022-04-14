@@ -31,12 +31,7 @@ export const LogCycle = () => {
       <Grid>
         <BasicCard></BasicCard>
         </Grid>
-
-
-    </Grid>
-    
-    
-  
+    </Grid>  
   )
   
 }

@@ -1,12 +1,9 @@
 import React from 'react'
+import GoogleAuth from '../components/Login';
 import Login from '../components/Login'
 
 function LoginPage() {
-  return (
-    <div className="LoginPage">
-      <Login />
-    </div>
-  );
+  return <GoogleAuth />;
 }
 
 export default LoginPage;
