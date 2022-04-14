@@ -1,0 +1,27 @@
+.picture{
+    height: 280px;
+    width: 800px;
+    position: inherit;
+}
+.run{
+    height: 250px;
+}
+.leftgrid{
+    background-color: #698CC0;
+}
+.item1{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
+}
+.item2{
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
+}
