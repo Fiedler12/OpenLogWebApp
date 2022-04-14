@@ -27,11 +27,11 @@ function addData(
 export const LogCycle = () => {
 
   return (
+    
     <Grid container>
       <Grid>
         <BasicCard></BasicCard>
         </Grid>
-
 
     </Grid>
     

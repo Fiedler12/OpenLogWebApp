@@ -1,9 +1,6 @@
 import { AppBar, Avatar, IconButton, Toolbar, Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import '../css_files/navbar.css'
-
-
-
+import '../css_files/navbar.css';
 
 const NavBar = () => {
     return (

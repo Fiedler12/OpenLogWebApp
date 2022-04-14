@@ -6,8 +6,10 @@ import NavBar from '../components/NavBar'
 export const Layout = () => {
   return (
       <>
+
     <NavBar></NavBar>
     <Outlet></Outlet>
     </>
+    
   )
 }
