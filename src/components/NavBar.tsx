@@ -14,27 +14,31 @@ const NavBar = () => {
                 <img src="../Logo.png " className="logo"> 
                 </img></Link>
                 </IconButton>
-                <Button color="inherit">Login</Button>
                 
-                <button className="menu">
-                    <Link to="/" style={{textDecoration: 'none'}}>Home</Link>
-                </button>
+                <Button color="inherit">
+                <Link to="/" style={{textDecoration: 'none'}}>Home</Link>
+                </Button>
+                
                
-                <button className="menu">
-                    <Link to="/about-us" style={{textDecoration: 'none'}}>AboutUs</Link>
-                </button>
+               <Button color="inherit">
+               <Link to="/about-us" style={{textDecoration: 'none'}}>AboutUs</Link>
+               </Button>
+               
 
-                <button className="menu">
-                    <Link to="/log-cycle" style={{textDecoration: 'none'}}>LogCycle</Link>
-                </button>
+                <Button color="inherit">
+                <Link to="/log-cycle" style={{textDecoration: 'none'}}>LogCycle</Link>
+                </Button>
 
-                <button className="menu">
-                    <Link to="/Settings" style={{textDecoration: 'none'}}>Settings</Link>
-                </button>
 
-                <button className="menu">
-                    <Link to="/Login" style={{textDecoration: 'none'}}>Login</Link>
-                </button>
+                <Button color="inherit">
+                <Link to="/Settings" style={{textDecoration: 'none'}}>Settings</Link>
+                </Button>
+                
+
+                <Button color="inherit">
+                <Link to="/Login" style={{textDecoration: 'none'}}>Login</Link>
+                </Button>
+               
                 <IconButton >
                 <Link to="/Settings">
                 <img src="../account.png " className="accountlogo"> 
