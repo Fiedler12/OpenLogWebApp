@@ -3,15 +3,17 @@ import {GoogleLogin, GoogleLogout} from 'react-google-login'
 
 const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
 
-function Login(){ 
 
+export default function Login(props: { insertId: (arg0: any) => any; }) { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
-  
+  const [userId, setUserId] = useState('')
+
   const onLoginSuccess = (res: any ) => {
       console.log('[Login Success] currentUser:', res.profileObj);
       setShowloginButton(false);
       setShowlogoutButton(true);
+      ()=> props.insertId(res.googleId)
   };
 
   const onLoginFailure = (res: any) => {
@@ -23,7 +25,8 @@ function Login(){
     console.clear();
     setShowloginButton(true);
     setShowlogoutButton(false);
-};
+    setUserId(''); 
+  }
 
 return (
     <div>
@@ -47,4 +50,3 @@ return (
   );
 }
 
-export default Login;

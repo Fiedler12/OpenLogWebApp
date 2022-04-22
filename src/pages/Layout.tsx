@@ -5,7 +5,6 @@ import NavBar from '../components/NavBar'
 import  database  from 'firebase/database'
 
 export const Layout = () => {
-  
   return (
       <>
     <NavBar></NavBar>
