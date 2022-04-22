@@ -8,11 +8,15 @@ import { LogOverview } from './pages/LogOverview';
 import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
 import { AddNewLog } from './pages/AddNewLog';
+import { makeStyles } from '@mui/material';
+import { CssBaseline } from '@mui/material';
+import './css_files/Backgroundimage.css'
 
 
 //testing push
 function App() {
   return (
+    <div  className='backgroundstuff'>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -26,6 +30,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

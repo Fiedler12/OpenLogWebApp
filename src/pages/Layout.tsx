@@ -7,8 +7,10 @@ import  database  from 'firebase/database'
 export const Layout = () => {
   return (
       <>
+
     <NavBar></NavBar>
     <Outlet></Outlet>
     </>
+    
   )
 }
