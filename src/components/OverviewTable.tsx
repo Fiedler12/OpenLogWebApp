@@ -8,32 +8,6 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import values from '../components/data/values.json'
 
-function createData(
-    id: number,
-    amount: number, 
-    date: string
-) {
-    return {id, amount, date}; 
-}
-
-const rows = [ 
-    createData(3, 18, "01-01-2022"),
-    createData(3, 14, "02-01-2022"),
-    createData(3, 15, "03-01-2022"),
-    createData(3, 16, "04-01-2022"),
-    createData(3, 17, "05-01-2022"),
-    createData(3, 12, "06-01-2022"),
-    createData(3, 19, "07-01-2022"),
-    createData(3, 11, "08-01-2022"),
-    createData(3, 10, "08-01-2022"),
-    createData(3, 20, "09-01-2022"),
-    createData(3, 12, "10-01-2022"),
-    createData(3, 19, "11-01-2022"),
-    createData(3, 11, "12-01-2022"),
-    createData(3, 10, "13-01-2022"),
-    createData(3, 20, "14-01-2022"),
-];
-
 interface tableProps {
     id: Number 
 }

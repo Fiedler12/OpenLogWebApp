@@ -32,3 +32,12 @@ bottom: 5 0px;
   display: flex;
   flex-direction: row;
 }
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+.overviewgraph {
+  background-color: white;
+}

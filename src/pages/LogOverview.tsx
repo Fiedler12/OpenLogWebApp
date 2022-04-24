@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { FloatingActionButton } from '../components/FloatingActionButton'
 import { LogEntry } from '../components/LogEntry'
 import { OverviewGraph } from '../components/OverviewGraph'
 import OverviewTable from '../components/OverviewTable'
@@ -15,10 +14,7 @@ export const LogOverview = ( {logs}: props ) => {
   return (
     <>
     <h1>{log.name}</h1>
-    <div className='topsite'>
     <h2>{log.measure}</h2>
-    <LogEntry></LogEntry>
-    </div>
     <div className='overviewrows' >
     <OverviewTable id={Number(id)}/>
     <OverviewGraph id={Number(id)}/>

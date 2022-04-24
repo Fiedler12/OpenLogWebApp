@@ -12,24 +12,22 @@ interface logProps {
 export const Home = ({logs}: logProps) => {
     return (
         <><Container>
-            <Grid container spacing={2}>
+            <Grid container spacing={5}>
                 {logs.map((log: any) => {
                     return <Grid item xs={6} md={4}>
-                        <li key={log.id}>
                             <Link href={'/log-overview/' + log.id}>
                             <MyCard
                             id={log.id}
                             title={log.name}
                             description={log.measure}></MyCard>
                             </Link>
-                            </li>
                     </Grid>;
                 })}
             </Grid>
-            <div className='fab'>
+        </Container>
+        <div className='fab'>
                 <FloatingActionButton></FloatingActionButton>
             </div>
-        </Container>
         </>
     )
 }
