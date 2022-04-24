@@ -1,20 +1,27 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { FloatingActionButton } from '../components/FloatingActionButton'
 import { LogEntry } from '../components/LogEntry'
 import { OverviewGraph } from '../components/OverviewGraph'
 import OverviewTable from '../components/OverviewTable'
 
-export const LogOverview = () => {
+interface props {
+  logs: any
+}
+
+export const LogOverview = ( {logs}: props ) => {
+  const id = useParams().id
+  const log = logs.find((n: any) => n.id === Number(id))
   return (
     <>
-    <h1>Logname</h1>
+    <h1>{log.name}</h1>
     <div className='topsite'>
-    <h2>UnitName</h2>
+    <h2>{log.measure}</h2>
     <LogEntry></LogEntry>
     </div>
     <div className='overviewrows' >
-    <OverviewTable />
-    <OverviewGraph />
+    <OverviewTable id={Number(id)}/>
+    <OverviewGraph id={Number(id)}/>
     </div>
     </>
   )

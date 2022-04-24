@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useMatch } from 'react-router-dom';
 import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
 import { Layout } from './pages/Layout';
@@ -11,6 +11,8 @@ import { AddNewLog } from './pages/AddNewLog';
 import { makeStyles } from '@mui/material';
 import { CssBaseline } from '@mui/material';
 import './css_files/Backgroundimage.css'
+import logs from './components/data/db.json'; 
+import { isModuleNamespaceObject } from 'util/types';
 
 
 //testing push
@@ -20,12 +22,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home logs={logs} />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="log-cycle" element={<LogCycle />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="settings" element={<Settings />} />
-          <Route path='log-overview' element={<LogOverview />} />
+          <Route path='log-overview/:id' element={<LogOverview logs={logs} />} />
           <Route path='add-new-log' element={<AddNewLog />} />
         </Route>
       </Routes>

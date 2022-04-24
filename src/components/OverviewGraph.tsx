@@ -1,45 +1,25 @@
 import React from 'react'
 import { CartesianGrid, LineChart, Line, XAxis, YAxis } from 'recharts';
+import values from '../components/data/values.json'; 
 
-function createData(
-    id: number,
-    amount: number,
-    date: string
-) {
-    return { id, amount, date };
+interface graphProps {
+    id: Number
 }
 
-const data = [
-    createData(3, 18, "01-01-2022"),
-    createData(3, 14, "02-01-2022"),
-    createData(3, 15, "03-01-2022"),
-    createData(3, 16, "04-01-2022"),
-    createData(3, 17, "05-01-2022"),
-    createData(3, 12, "06-01-2022"),
-    createData(3, 19, "07-01-2022"),
-    createData(3, 11, "08-01-2022"),
-    createData(3, 10, "08-01-2022"),
-    createData(3, 20, "09-01-2022"),
-    createData(3, 12, "10-01-2022"),
-    createData(3, 19, "11-01-2022"),
-    createData(3, 11, "12-01-2022"),
-    createData(3, 10, "13-01-2022"),
-    createData(3, 20, "14-01-2022"),
-]
-
-
-export const OverviewGraph = () => {
+export const OverviewGraph = ({id}: graphProps) => {
+    const realValues = values.filter(value => Number(value.logId) === id)
+    console.log(realValues)
     return (
         <LineChart
             width={1200}
             height={600}
-            data={data}
+            data={realValues}
             margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
         >
-            <XAxis dataKey="date" />
-            <YAxis dataKey="amount" />
+            <XAxis dataKey="date"/>
+            <YAxis dataKey="value" />
             <CartesianGrid stroke="#f5f5f5" />
-            <Line type="monotone" dataKey="amount" stroke="#ff7300" yAxisId={0} />
+            <Line type="monotone" dataKey="value" stroke="#ff7300" yAxisId={0} />
         </LineChart>
 
   )

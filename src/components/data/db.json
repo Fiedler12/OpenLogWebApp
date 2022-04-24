@@ -1,0 +1,17 @@
+[
+        {
+            "id": 1,
+            "name": "Blodsukker",
+            "measure": "mg/l"
+        },
+        {
+            "id": 2,
+            "name": "Insulin",
+            "measure": "Units"
+        },
+        {
+            "id": 3,
+            "name": "Ketoner",
+            "measure": "milimol"
+        }
+    ]

@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import React from 'react'
 
 interface MyCardProps {
+    id?: number, 
     title?: string,
     description?: string
 }
 
-export const MyCard = ({title, description}: MyCardProps) => {
+export const MyCard = ({id, title, description}: MyCardProps) => {
   return (
     <Card sx={{ minWidth: 275 }}>
-    <CardActionArea href="log-overview">
+    <CardActionArea>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}

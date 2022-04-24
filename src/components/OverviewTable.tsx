@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import values from '../components/data/values.json'
 
 function createData(
     id: number,
@@ -33,7 +34,12 @@ const rows = [
     createData(3, 20, "14-01-2022"),
 ];
 
-export default function OverviewTable() {
+interface tableProps {
+    id: Number 
+}
+
+export default function OverviewTable({id}: tableProps) {
+    const realValues = values.filter(value => Number(value.logId) === id)
     return (
         <TableContainer className="overviewTable" component={Paper}>
             <Table id="fix-head" sx={{ maxWidth: 400 }} aria-label="simple table">
@@ -44,13 +50,13 @@ export default function OverviewTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {realValues.map((row) => (
                         <TableRow
-                        key={row.amount}
+                        key={row.value}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
                         >
                             <TableCell component="th" scope="row">
-                                {row.amount}
+                                {row.value}
                             </TableCell>
                             <TableCell align='right'>{row.date}</TableCell>
                         </TableRow>
