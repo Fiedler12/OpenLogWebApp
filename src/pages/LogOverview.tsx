@@ -6,12 +6,18 @@ import { OverviewGraph } from '../components/OverviewGraph'
 import OverviewTable from '../components/OverviewTable'
 
 interface props {
-  logs: any[]
+  logs: log[]
+}
+
+interface log {
+  name: string,
+  measure: string,
+  id: Number
 }
 
 export const LogOverview = ( {logs}: props) => {
   const id = useParams().id
-  let log: any = {}
+  let log: log | undefined; 
   useEffect(() => {
     log = logs.find((n: any) => n.id === Number(id)) 
   }, logs);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes, useMatch } from 'react-router-dom';
 import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
@@ -12,14 +12,15 @@ import './css_files/Backgroundimage.css'
 import axios from 'axios';
 
 
-const response = axios.get('http://localhost:3001/logs')
 
 //testing push
 function App() {
   const [logs, setLogs] = useState([]);
-  response.then(response => {
-      setLogs(response.data); 
-  })
+  useEffect(() => {
+    const response = axios.get('http://localhost:3001/logs').then(response => {
+      setLogs(response.data)
+    }) 
+  }, [])
   return (
     <div  className='backgroundstuff'>
     <BrowserRouter>
@@ -31,7 +32,7 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="settings" element={<Settings />} />
           <Route path='log-overview/:id' element={<LogOverview logs={logs} />} />
-          <Route path='add-new-log' element={<AddNewLog />} />
+          <Route path='add-new-log' element={<AddNewLog id={logs.length}/>} />
         </Route>
       </Routes>
     </BrowserRouter>
