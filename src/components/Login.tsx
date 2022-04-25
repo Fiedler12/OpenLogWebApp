@@ -13,7 +13,6 @@ export default function Login(props: { insertId: (arg0: any) => any; }) {
       console.log('[Login Success] currentUser:', res.profileObj);
       setShowloginButton(false);
       setShowlogoutButton(true);
-      // ()=> props.insertId(res.googleId)
   };
 
   const onLoginFailure = (res: any) => {
