@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 
 const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
@@ -7,13 +7,12 @@ const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleuserc
 export default function Login(props: { insertId: (arg0: any) => any; }) { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
-  const [userId, setUserId] = useState('')
+  // const [userId, setUserId] = useState('')
 
   const onLoginSuccess = (res: any ) => {
       console.log('[Login Success] currentUser:', res.profileObj);
       setShowloginButton(false);
       setShowlogoutButton(true);
-      ()=> props.insertId(res.googleId)
   };
 
   const onLoginFailure = (res: any) => {
@@ -21,11 +20,12 @@ export default function Login(props: { insertId: (arg0: any) => any; }) {
   };
 
   const onLogoutSuccess = () => {
-    alert('Logout made successfull') ;
+    alert('Logout made successfull: userid:') ;
     console.clear();
     setShowloginButton(true);
     setShowlogoutButton(false);
-    setUserId(''); 
+    // setUserId(''); 
+    
   }
 
 return (
