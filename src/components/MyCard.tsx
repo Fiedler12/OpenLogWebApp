@@ -10,7 +10,7 @@ interface MyCardProps {
 
 export const MyCard = ({id, title, description}: MyCardProps) => {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ maxWidth: 200 }}>
     <CardActionArea>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

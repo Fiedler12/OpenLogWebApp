@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes, useMatch } from 'react-router-dom';
 import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
@@ -8,21 +8,24 @@ import { LogOverview } from './pages/LogOverview';
 import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
 import { AddNewLog } from './pages/AddNewLog';
-import { makeStyles } from '@mui/material';
-import { CssBaseline } from '@mui/material';
 import './css_files/Backgroundimage.css'
-import logs from './components/data/db.json'; 
-import { isModuleNamespaceObject } from 'util/types';
+import axios from 'axios';
 
+
+const response = axios.get('http://localhost:3001/logs')
 
 //testing push
 function App() {
+  const [logs, setLogs] = useState([]);
+  response.then(response => {
+      setLogs(response.data); 
+  })
   return (
     <div  className='backgroundstuff'>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home logs={logs} />} />
+          <Route index element={<Home logs ={logs}/>} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="log-cycle" element={<LogCycle />} />
           <Route path="login" element={<LoginPage />} />

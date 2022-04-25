@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CartesianGrid, LineChart, Line, XAxis, YAxis } from 'recharts';
-import values from '../components/data/values.json'; 
+import axios from 'axios'; 
 
 interface graphProps {
     id: Number
 }
 
+const response = axios.get('http://localhost:3001/values')
+
 export const OverviewGraph = ({id}: graphProps) => {
-    const realValues = values.filter(value => Number(value.logId) === id)
+    const [values, setValues] = useState([]); 
+    response.then(async reponse => {
+        setValues((await response).data); 
+    })
+    const realValues = values.filter((value: { logId: any; }) => Number(value.logId) === id)
     console.log(realValues)
     return (
         <><div

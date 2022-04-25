@@ -1,7 +1,8 @@
 import { Container, Fab, Grid, Link } from '@mui/material'
-import React from 'react'
+import React from 'react'; 
 import { FloatingActionButton } from '../components/FloatingActionButton';
-import { MyCard } from '../components/MyCard'
+import { MyCard } from '../components/MyCard';
+
 
 
 interface logProps {
@@ -12,9 +13,9 @@ interface logProps {
 export const Home = ({logs}: logProps) => {
     return (
         <><Container>
-            <Grid container spacing={5}>
+            <Grid container rowSpacing={4} columnSpacing={6} maxWidth="sm">
                 {logs.map((log: any) => {
-                    return <Grid item xs={6} md={4}>
+                    return <Grid item xs={6} md={5}>
                             <Link href={'/log-overview/' + log.id}>
                             <MyCard
                             id={log.id}

@@ -6,14 +6,23 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import values from '../components/data/values.json'
+import axios from 'axios'; 
+import { useState } from 'react';
+
+
 
 interface tableProps {
     id: Number 
 }
 
+const response = axios.get('http://localhost:3001/values')
+
 export default function OverviewTable({id}: tableProps) {
-    const realValues = values.filter(value => Number(value.logId) === id)
+    const [values, setValues] = useState<any[]>([]); 
+    response.then(async reponse => {
+        setValues((await response).data); 
+    })
+    const realValues = values.filter((value: { logId: any; }) => Number(value.logId) === id)
     return (
         <TableContainer className="overviewTable" component={Paper}>
             <Table id="fix-head" sx={{ maxWidth: 400 }} aria-label="simple table">
