@@ -5,6 +5,8 @@ import { database } from '../components/Firebase';
 import {ref, set, push} from "firebase/database"; 
 import  userId from "./LoginPage"
 import { AddNewLogSetup } from '../components/AddNewLogSetup'
+import logs from '../components/data/db.json'
+import { writeFile } from 'fs';
 
 export const AddNewLog = () => {
     const db = database; 
@@ -14,15 +16,20 @@ export const AddNewLog = () => {
         <>
         <form onSubmit={(e) => {
             e.preventDefault();
-            const reference = ref(db, "logs");
-            const gamesRef = push(reference);
-            set(ref(db, "games/"), {
-                id: userId,
-                name: logName,
-                measure: logMeasure
-            });
+            // const reference = ref(db, "logs");
+            // const gamesRef = push(reference);
+            // set(ref(db, "games/"), {
+            //     id: userId,
+            //     name: logName,
+            //     measure: logMeasure
+            const arrayStr = JSON.stringify(logs)
+            const logArray = JSON.parse(arrayStr)
+            const newLog = {"id" : logs.length + 1, "name" : logName, "measure" : logMeasure}; 
+            logArray.push(newLog);
+            setLogName(''); 
+            setLogMeasure(''); 
         } }>
-            <input name="  Name"
+            <input name="Name"
                 value={logName}
                 onChange={e => setLogName(e.target.value)} />
             <br />
