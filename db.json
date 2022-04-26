@@ -29,6 +29,11 @@
       "id": 6,
       "name": "test",
       "measure": "unit"
+    },
+    {
+      "id": 7,
+      "name": "Test",
+      "measure": "test"
     }
   ],
   "values": [

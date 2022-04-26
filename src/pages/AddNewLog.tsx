@@ -6,14 +6,15 @@ import {ref, set, push} from "firebase/database";
 import  userId from "./LoginPage"
 import { AddNewLogSetup } from '../components/AddNewLogSetup'
 import axios from 'axios';
+import Redirect from 'react-router-dom'; 
 
 interface props {
     id: Number
 }
 
 export const AddNewLog = ({id}: props) => {
-    const [logName, setLogName] = useState('')
-    const [logMeasure, setLogMeasure] = useState('')
+    const [logName, setLogName] = useState(''); 
+    const [logMeasure, setLogMeasure] = useState(''); 
     return (
         <>
         <form onSubmit={(e) => {

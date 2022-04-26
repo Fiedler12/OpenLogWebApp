@@ -18,6 +18,7 @@ interface log {
 export const LogOverview = ( {logs}: props) => {
   const id = useParams().id
   let log: log | undefined; 
+  const [newValue, setNewValue] = useState()
   useEffect(() => {
     log = logs.find((n: any) => n.id === Number(id)) 
   }, logs);
@@ -26,6 +27,17 @@ export const LogOverview = ( {logs}: props) => {
     <>
     <h1>{log?.name}</h1>
     <h2>{log?.measure}</h2>
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      const newValueObject = {
+
+      } 
+    } 
+    }>
+    <input name="value"
+    
+    />
+    </form>
     <div className='overviewrows' >
     <OverviewTable id={Number(id)}/>
     <OverviewGraph id={Number(id)}/>
