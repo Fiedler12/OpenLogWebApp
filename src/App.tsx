@@ -20,7 +20,7 @@ function App() {
     const response = axios.get('http://localhost:3001/logs').then(response => {
       setLogs(response.data)
     }) 
-  }, [])
+  });
   return (
     <div  className='backgroundstuff'>
     <BrowserRouter>

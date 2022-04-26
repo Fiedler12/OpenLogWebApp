@@ -29,11 +29,6 @@
       "id": 6,
       "name": "test",
       "measure": "unit"
-    },
-    {
-      "id": 7,
-      "name": "Newtest",
-      "measure": "testUnitnew"
     }
   ],
   "values": [
