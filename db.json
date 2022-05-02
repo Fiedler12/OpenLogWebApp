@@ -27,13 +27,8 @@
     },
     {
       "id": 6,
-      "name": "test",
-      "measure": "unit"
-    },
-    {
-      "id": 7,
-      "name": "Test",
-      "measure": "test"
+      "name": "NewLog",
+      "measure": "NewUnit"
     }
   ],
   "values": [
@@ -135,57 +130,69 @@
     },
     {
       "logId": 1,
-      "id": 16,
+      "id": 17,
       "value": 20,
       "date": "16-01-2022"
     },
     {
       "logId": 1,
-      "id": 16,
+      "id": 18,
       "value": 20,
       "date": "16-01-2022"
     },
     {
       "logId": 2,
-      "id": 16,
+      "id": 19,
       "value": 16,
       "date": "16-01-2022"
     },
     {
       "logId": 3,
-      "id": 16,
+      "id": 20,
       "value": 20,
       "date": "16-01-2022"
     },
     {
       "logId": 2,
-      "id": 16,
+      "id": 21,
       "value": 17,
       "date": "16-01-2022"
     },
     {
       "logId": 2,
-      "id": 16,
+      "id": 22,
       "value": 22,
       "date": "16-01-2022"
     },
     {
       "logId": 2,
-      "id": 16,
+      "id": 23,
       "value": 15,
       "date": "16-01-2022"
     },
     {
       "logId": 3,
-      "id": 16,
+      "id": 24,
       "value": 30,
       "date": "16-01-2022"
     },
     {
       "logId": 2,
-      "id": 16,
+      "id": 25,
       "value": 25,
       "date": "16-01-2022"
+    },
+    {
+      "logId": 2,
+      "id": 26,
+      "value": 14,
+      "date": "02-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 27,
+      "value": 15,
+      "date": "02-04-2022"
     }
   ]
 }

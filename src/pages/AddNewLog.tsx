@@ -43,3 +43,4 @@ export const AddNewLog = ({id}: props) => {
         </form></>
     )
 }
+

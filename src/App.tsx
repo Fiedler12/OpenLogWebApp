@@ -9,18 +9,21 @@ import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
 import { AddNewLog } from './pages/AddNewLog';
 import './css_files/Backgroundimage.css'
-import axios from 'axios';
-
+import axios from 'axios'; 
 
 
 //testing push
 function App() {
   const [logs, setLogs] = useState([]);
+  const [id, setId] = useState(Number)
   useEffect(() => {
     const response = axios.get('http://localhost:3001/logs').then(response => {
       setLogs(response.data)
+      const id = axios.get('http://localhost:3001/values').then(id => {
+        setId(id.data.length)
+      } )
     }) 
-  }, [logs, setLogs]);
+  }, []);
   return (
     <div  className='backgroundstuff'>
     <BrowserRouter>
@@ -31,7 +34,7 @@ function App() {
           <Route path="log-cycle" element={<LogCycle />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="settings" element={<Settings />} />
-          <Route path='log-overview/:id' element={<LogOverview logs={logs} />} />
+          <Route path='log-overview/:id' element={<LogOverview logs={logs} id={id} />} />
           <Route path='add-new-log' element={<AddNewLog id={logs.length}/>} />
         </Route>
       </Routes>
