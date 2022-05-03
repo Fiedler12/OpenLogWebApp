@@ -27,53 +27,8 @@
     },
     {
       "id": 6,
-      "name": "NewLog",
-      "measure": "NewUnit"
-    },
-    {
-      "id": 7,
-      "name": "of",
-      "measure": "ls"
-    },
-    {
-      "id": 8,
-      "name": "Hi",
-      "measure": "Bye"
-    },
-    {
-      "id": 9,
-      "name": "Poops",
-      "measure": "Sperms"
-    },
-    {
-      "id": 10,
-      "name": "Peepee",
-      "measure": "Peepee"
-    },
-    {
-      "id": 11,
-      "name": "newtest",
-      "measure": "newtest"
-    },
-    {
-      "id": 12,
-      "name": "testete",
-      "measure": "test"
-    },
-    {
-      "id": 13,
-      "name": ".",
-      "measure": "."
-    },
-    {
-      "id": 14,
-      "name": "latest",
-      "measure": ","
-    },
-    {
-      "id": 15,
-      "name": "late",
-      "measure": "kate"
+      "name": "Test",
+      "measure": "Test"
     }
   ],
   "values": [
@@ -240,69 +195,57 @@
       "date": "02-04-2022"
     },
     {
-      "logId": 2,
+      "logId": 4,
       "id": 28,
       "value": 15,
-      "date": "02-04-2022"
+      "date": "03-04-2022"
     },
     {
-      "logId": 1,
+      "logId": 6,
       "id": 29,
       "value": 15,
-      "date": "02-04-2022"
+      "date": "03-04-2022"
     },
     {
-      "logId": 8,
+      "logId": 6,
       "id": 30,
-      "value": 15,
-      "date": "02-04-2022"
+      "value": 17,
+      "date": "03-04-2022"
     },
     {
-      "logId": 8,
+      "logId": 6,
       "id": 31,
-      "value": 17,
-      "date": "02-04-2022"
+      "value": 20,
+      "date": "03-04-2022"
     },
     {
-      "logId": 1,
+      "logId": 6,
       "id": 32,
-      "value": 15,
+      "value": 30,
       "date": "03-04-2022"
     },
     {
-      "logId": 1,
+      "logId": 6,
       "id": 33,
-      "value": 16,
+      "value": 50,
       "date": "03-04-2022"
     },
     {
-      "logId": 1,
+      "logId": 6,
       "id": 34,
-      "value": 16,
+      "value": 10,
       "date": "03-04-2022"
     },
     {
-      "logId": 1,
+      "logId": 6,
       "id": 35,
-      "value": 17,
+      "value": 20,
       "date": "03-04-2022"
     },
     {
-      "logId": 1,
+      "logId": 6,
       "id": 36,
-      "value": 30,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 1,
-      "id": 37,
-      "value": 15,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 1,
-      "id": 38,
-      "value": 30,
+      "value": 25,
       "date": "03-04-2022"
     }
   ]

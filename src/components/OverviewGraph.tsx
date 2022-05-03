@@ -7,7 +7,7 @@ interface graphProps {
 }
 
 interface value {
-    logid: Number
+    logId: Number
     id: Number
     value: Number
     date: string 

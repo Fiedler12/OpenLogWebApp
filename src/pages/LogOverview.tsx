@@ -17,7 +17,7 @@ interface log {
 }
 
 interface value {
-  logid: Number,
+  logId: Number,
   id: Number,
   value: Number,
   date: string
@@ -29,7 +29,7 @@ export const LogOverview = ({id}: props) => {
   let log: log | undefined;
   const current = new Date();
   const [newValue, setNewValue] = useState('')
-  const [values, setValues] = useState([])
+  const [values, setValues] = useState<value[]>([])
   useEffect(() => {
     getLog();
     console.log("hi")
@@ -46,14 +46,14 @@ export const LogOverview = ({id}: props) => {
   }
 
   async function getValues() {
-    let values = await DatabaseService.getValues();
-    values.filter((value: { logId: any; }) => Number(value.logId) === id)
-    setValues(values); 
+    let allValues: value[] = await DatabaseService.getValues();
+    let filtered = allValues.filter(value => value.logId === Number(logId))
+    setValues(filtered); 
   }
 
   useEffect(() => {
     getValues();
-  }, [newValue])
+  }, [newValue ])
 
 
   return (
@@ -69,6 +69,7 @@ export const LogOverview = ({id}: props) => {
           value: Number(newValue),
           date: ('0' + current.getDate()).slice(-2) + '-' + ('0' + current.getMonth()).slice(-2) + '-' + current.getFullYear()
         }
+        console.log(newValueObject)
         postValue(newValueObject); 
         setNewValue('')
       }}>
