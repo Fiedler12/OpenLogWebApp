@@ -25,7 +25,15 @@ const DatabaseService = {
       const status = axios.post('http://localhost:3001/values', value).then(response => {
           console.log(response.data); 
       })
+  },
+  deleteValue: async function(value: {}) {
+      const status = axios.delete('http://localhost:3001/values', value).then(response => {
+          console.log(response.data); 
+      })
   }
+
+
+  
 }; 
 
 export default DatabaseService; 

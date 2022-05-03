@@ -15,6 +15,11 @@ code {
   display:flex;
   flex-direction:row;
 }
+.newLogForm {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
 .overviewTable {
   overflow-y: scroll;
   max-height: 600px;
@@ -40,4 +45,22 @@ h2 {
 }
 .overviewgraph {
   background-color: white;
+}
+
+input { 
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;;
+}
+
+button[type=submit] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;;
 }

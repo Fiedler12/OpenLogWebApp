@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
+import DatabaseService from './DatabaseService';
 
 
 
@@ -21,12 +22,20 @@ interface value {
     date: string 
 }
 
-
 export default function OverviewTable({receivedValues}: tableProps) {
     const [values, setValues] = useState<value[]>([]); 
     React.useEffect(() => {
         setValues(receivedValues)
     }, [receivedValues])
+
+    const handleCellClick = (e: value) => {
+        deleteLog(e); 
+    }
+
+
+    async function deleteLog(value: value) {
+        await DatabaseService.deleteValue(value);
+    }
     return (
         <TableContainer className="overviewTable" component={Paper}>
             <Table id="fix-head" sx={{ maxWidth: 400 }} aria-label="simple table">
@@ -41,7 +50,7 @@ export default function OverviewTable({receivedValues}: tableProps) {
                         <TableRow
                         sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
                         >
-                            <TableCell component="th" scope="row">
+                            <TableCell component="th" scope="row" onClick={() => handleCellClick(row)}>
                                 {row.value}
                             </TableCell>
                             <TableCell align='right'>{row.date}</TableCell>

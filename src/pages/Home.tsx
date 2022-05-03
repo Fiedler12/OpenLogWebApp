@@ -22,11 +22,12 @@ export const Home = () => {
     useEffect(() => {
         GetLogs();
     }, []);
+
     return (
         <><Container>
             <Grid container rowSpacing={4} columnSpacing={6} maxWidth="sm">
                 {currentLogs.map((log: any) => {
-                    return <Grid item xs={6} md={5}>
+                    return <Grid item xs={6} md={4}>
                             <Link href={'/log-overview/' + log.id}>
                             <MyCard
                             id={log.id}
