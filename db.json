@@ -29,6 +29,16 @@
       "id": 6,
       "name": "Test",
       "measure": "Test"
+    },
+    {
+      "id": 7,
+      "name": "Newtest",
+      "measure": "NewUnit"
+    },
+    {
+      "id": 8,
+      "name": "Im da best",
+      "measure": "poopoo"
     }
   ],
   "values": [

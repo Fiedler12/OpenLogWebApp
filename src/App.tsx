@@ -41,7 +41,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home logs={logs} />} />
+            <Route index element={<Home />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="log-cycle" element={<LogCycle />} />
             <Route path="login" element={<LoginPage />} />
