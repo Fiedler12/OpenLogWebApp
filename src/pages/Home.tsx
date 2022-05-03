@@ -13,9 +13,8 @@ interface logProps {
 export const Home = ({logs}: logProps) => {
     const [currentLogs, setCurrentLogs] = useState(logs);
     useEffect(() => {
-        console.log("getting logs")
         setCurrentLogs(logs); 
-    }, [currentLogs]);
+    }, [logs]);
     return (
         <><Container>
             <Grid container rowSpacing={4} columnSpacing={6} maxWidth="sm">
