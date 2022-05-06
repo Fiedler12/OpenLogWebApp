@@ -12,9 +12,7 @@ export const AboutUs = () => {
       of any disired data
       You can costumize your units and categories of your choosing</p>
       <h2 className='header'>About our APP</h2>
-      <img src={img} className = 'image'/>
-      
-    
+      <img src={img} className = 'image'/> 
 
 
 

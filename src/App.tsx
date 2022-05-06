@@ -26,6 +26,7 @@ function App() {
   }, []);
   return (
     <div  className='backgroundstuff'>
+      
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
