@@ -1,12 +1,9 @@
-import { useRadioGroup } from '@mui/material';
-import React, { useState } from 'react'
-import Login from '../components/Login'
+import Login, {_users, _user} from '../components/Login'
 
-function LoginPage() {
-  const [userId, setUserId] = useState(1);
+function LoginPage(users: _user[] ) {
   return (
     <div className="LoginPage">
-      <Login insertId={setUserId}/>
+      <Login {...users}/>
     </div>
   );
 }

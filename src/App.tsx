@@ -21,6 +21,7 @@ interface log {
 function App() {
   const [logs, setLogs] = useState([]);
   const [id, setId] = useState(Number)
+  const [users, setUsers] = useState([]);
 
   async function GetLogs() {
     let allLogs = await DatabaseService.getLogs();
@@ -33,6 +34,10 @@ function App() {
     console.log("getting overview")
   },[id]);
 
+  async function getUsers() {
+    let allUsers = await DatabaseService.getUsers();
+    setUsers(allUsers);
+  }
   return (
     <div className='backgroundstuff'>
       <BrowserRouter>
@@ -40,7 +45,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about-us" element={<AboutUs />} />
-            <Route path="login" element={<LoginPage />} />
+            <Route path="login" element={<LoginPage {...users} />} />
             <Route path="settings" element={<Settings />} />
             <Route path='log-overview/:id' element={<LogOverview id={id} />} />
             <Route path='add-new-log' element={<AddNewLog id=   {logs.length} />} />
