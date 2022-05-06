@@ -17,6 +17,7 @@ export const AddNewLog = ({id}: props) => {
     const [logMeasure, setLogMeasure] = useState(''); 
     return (
         <>
+        <div className='newLogForm'>
         <form onSubmit={(e) => {
             e.preventDefault();
             const logObject = { 
@@ -40,7 +41,9 @@ export const AddNewLog = ({id}: props) => {
                 onChange={e => setLogMeasure(e.target.value)} />
             <br />
             <button type='submit'>Create</button>
-        </form></>
+                </form>
+            </div>
+        </>
     )
 }
 
