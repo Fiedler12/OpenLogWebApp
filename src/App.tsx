@@ -10,12 +10,19 @@ import { Settings } from './pages/Settings';
 import { AddNewLog } from './pages/AddNewLog';
 import './css_files/Backgroundimage.css'
 import axios from 'axios'; 
+import Login from './components/Login';
+
+// const [username, setUsername] = useState('')
+// const [password, setPassword] = useState('')
+// const [user, setUser] = useState(null)
 
 
 //testing push
 function App() {
   const [logs, setLogs] = useState([]);
   const [id, setId] = useState(Number)
+  const [userId, setUserId] = useState(1);
+ 
   useEffect(() => {
     const response = axios.get('http://localhost:3001/logs').then(response => {
       setLogs(response.data)
@@ -25,7 +32,6 @@ function App() {
     }) 
   }, []);
   return (
-    <div  className='backgroundstuff'>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -39,7 +45,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-    </div>
   );
 }
 
