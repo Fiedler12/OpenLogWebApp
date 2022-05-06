@@ -1,6 +1,7 @@
 import { userInfo } from 'os';
 import {useState} from 'react'
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
+import DatabaseService from './DatabaseService';
 
 const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
 
@@ -17,10 +18,7 @@ export default function Login(props: { insertId: (arg0: any) => any; }) {
       setShowloginButton(false);
       setShowlogoutButton(true);
 
-      const response = axios.get('http://localhost:3001/users').then(response => {
-        setUsers(response.data)
-      }
-
+      
   };
 
   const onLoginFailure = (res: any) => {
@@ -36,8 +34,21 @@ export default function Login(props: { insertId: (arg0: any) => any; }) {
     
   }
 
+  async function getUsers() {
+    let users = await DatabaseService.getUsers();
+    return users;
+  };
+
+  async function getUser(id: Number) {
+    let user = await DatabaseService.getUser(1);
+    return user;
+  }
+
 return (
     <div>
+      <h1>
+        <div> user </div>
+      </h1>
         { showloginButton ?
           <GoogleLogin
             clientId={clientId}
