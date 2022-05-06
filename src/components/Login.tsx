@@ -18,7 +18,14 @@ export default function Login(props: { insertId: (arg0: any) => any; }) {
       setShowloginButton(false);
       setShowlogoutButton(true);
 
+<<<<<<< HEAD
       
+=======
+      // const response = axios.get('http://localhost:3001/users').then(response => {
+      //   setUsers(response.data)
+      // }
+
+>>>>>>> c0309eda175bc5e7b2efcc6f13874bdb585f6a56
   };
 
   const onLoginFailure = (res: any) => {
