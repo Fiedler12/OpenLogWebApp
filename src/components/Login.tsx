@@ -17,9 +17,9 @@ export default function Login(props: { insertId: (arg0: any) => any; }) {
       setShowloginButton(false);
       setShowlogoutButton(true);
 
-      const response = axios.get('http://localhost:3001/users').then(response => {
-        setUsers(response.data)
-      }
+      // const response = axios.get('http://localhost:3001/users').then(response => {
+      //   setUsers(response.data)
+      // }
 
   };
 

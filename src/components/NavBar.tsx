@@ -20,12 +20,6 @@ const NavBar = () => {
                <Button color="inherit">
                <Link to="/about-us" style={{textDecoration: 'none'}}>AboutUs</Link>
                </Button>
-               
-
-                <Button color="inherit">
-                <Link to="/log-cycle" style={{textDecoration: 'none'}}>LogCycle</Link>
-                </Button>
-
 
                 <Button color="inherit">
                 <Link to="/Settings" style={{textDecoration: 'none'}}>Settings</Link>

@@ -1,12 +1,5 @@
-
-import { collection, Firestore, getDocs } from 'firebase/firestore/lite';
-import React, { useState } from 'react'
-import { database } from '../components/Firebase';
-import {ref, set, push} from "firebase/database"; 
-import  userId from "./LoginPage"
-import { AddNewLogSetup } from '../components/AddNewLogSetup'
+import { useState } from 'react'
 import axios from 'axios';
-import Redirect from 'react-router-dom'; 
 
 interface props {
     id: Number

@@ -466,23 +466,59 @@
       "id": 70,
       "value": 29,
       "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 71,
+      "value": 40,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 72,
+      "value": 15,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 73,
+      "value": 20,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 74,
+      "value": 30,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 75,
+      "value": 10,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 76,
+      "value": 50,
+      "date": "06-04-2022"
     }
   ],
-  "users":[
+  "users": [
     {
-      "id":1,
-      "name":"John Doe",
-      "googleId":"123123123123"
+      "id": 1,
+      "name": "John Doe",
+      "googleId": "123123123123"
     },
     {
-      "id":2,
-      "name":"Jane Doe",
-      "googleId":"123123123444"
+      "id": 2,
+      "name": "Jane Doe",
+      "googleId": "123123123444"
     },
     {
-      "id":3,
-      "name":"James Doe",
-      "googleId":"12312312555"
+      "id": 3,
+      "name": "James Doe",
+      "googleId": "12312312555"
     }
   ]
 }
