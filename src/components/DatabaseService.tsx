@@ -30,8 +30,31 @@ const DatabaseService = {
       const status = axios.delete('http://localhost:3001/values', value).then(response => {
           console.log(response.data); 
       })
+  },
+  getUsers: async function(value: {}){
+      const data = axios.get('http://localhost:3001/users').then(response => {
+          return response.data;
+      })
+      return data;
+  },
+  addUser: async function(value: {}) {
+      const data = axios.post('http://localhost:3001/users').then(response => {
+          console.log(response.data)
+      })
   }
+// ,  deleteUser:async function(value: {}){
+//       const 
+      
+//   }
 
+
+  /**
+
+router.post(baseUrl, userController.add_user);
+
+router.get(baseUrl+'/:id', userController.get_user);
+router.delete(baseUrl+'/:id', userController.delete_user);
+ */
 
   
 }; 
