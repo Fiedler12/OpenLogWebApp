@@ -39,6 +39,11 @@
       "id": 8,
       "name": "Im da best",
       "measure": "poopoo"
+    },
+    {
+      "id": 9,
+      "name": "Newtest",
+      "measure": "NewUnit"
     }
   ],
   "values": [
@@ -401,6 +406,66 @@
       "id": 60,
       "value": 16,
       "date": "03-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 61,
+      "value": 15,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 62,
+      "value": 16,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 63,
+      "value": 12,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 64,
+      "value": 13,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 65,
+      "value": 17,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 66,
+      "value": 15,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 67,
+      "value": 17,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 68,
+      "value": 19,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 69,
+      "value": 16,
+      "date": "06-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 70,
+      "value": 29,
+      "date": "06-04-2022"
     }
   ]
 }
