@@ -1,12 +1,14 @@
+<<<<<<< HEAD
 import { userInfo } from 'os';
 import {useState, useEffect} from 'react'
+=======
+import {useState} from 'react'
+>>>>>>> master
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 import DatabaseService from './DatabaseService';
 
 const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
 
-// const jwt = require('jsonwebtoken')
-// const bcrypt = require('bcrypt')
 
 export type _user = {
   name: String,
@@ -21,7 +23,17 @@ export interface _users {
 export default function Login(startingUsers: _user[]) { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
+<<<<<<< HEAD
   const [users, setUsers] = useState<_user[]>(startingUsers);
+=======
+  // const [userId, setUserId] = useState('')
+
+  const onLoginSuccess = (res: any ) => {
+      console.log('[Login Success] currentUser:', res.profileObj);
+      setShowloginButton(false);
+      setShowlogoutButton(true);
+  };
+>>>>>>> master
 
   
   const onLoginFailure = (res: any) => {

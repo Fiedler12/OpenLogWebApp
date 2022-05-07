@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 import { LoginSharp } from '@mui/icons-material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import DatabaseService from '../components/DatabaseService'
+=======
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+>>>>>>> master
 import { LogEntry } from '../components/LogEntry'
 import { OverviewGraph } from '../components/OverviewGraph'
 import OverviewTable from '../components/OverviewTable'
 
 interface props {
+  logs: log[]
   id: Number
 }
 
@@ -17,6 +24,7 @@ interface log {
   measure: string
 }
 
+<<<<<<< HEAD
 interface value {
   logId: Number
     id: Number
@@ -51,6 +59,16 @@ export const LogOverview = ({id}: props) => {
   useEffect(() => {
     getValues();
   }, [newValue]); 
+=======
+export const LogOverview = ({ logs }: props, {id}: props) => {
+  const logId = useParams().id
+  let log: log | undefined;
+  const current = new Date();
+  useEffect(() => {
+    log = logs.find((n: any) => n.id === Number(logId))
+  }, logs);
+  const [newValue, setNewValue] = useState('')
+>>>>>>> master
 
   return (
     <>
@@ -65,7 +83,14 @@ export const LogOverview = ({id}: props) => {
           value: Number(newValue),
           date: ('0' + current.getDate()).slice(-2) + '-' + ('0' + current.getMonth()).slice(-2) + '-' + current.getFullYear()
         }
+<<<<<<< HEAD
         DatabaseService.postValue(newValueObject)
+=======
+        axios.post('http://localhost:3001/values', newValueObject)
+          .then(response => {
+            console.log(response);
+          })
+>>>>>>> master
         setNewValue('')
       }}>
         <input name="Value"
@@ -74,8 +99,8 @@ export const LogOverview = ({id}: props) => {
         <button type='submit'>Enter</button>
       </form>
       <div className='overviewrows' >
-        <OverviewTable receivedValues={values} />
-        <OverviewGraph receivedValues={values} />
+        <OverviewTable id={Number(logId)} />
+        <OverviewGraph id={Number(logId)} />
       </div>
     </>
   )
