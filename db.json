@@ -29,11 +29,6 @@
       "id": 6,
       "name": "NewLog",
       "measure": "NewUnit"
-    },
-    {
-      "id": 10,
-      "name": "new",
-      "measure": "new"
     }
   ],
   "values": [
@@ -215,6 +210,48 @@
       "logId": 1,
       "id": 30,
       "value": 15,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 31,
+      "value": 15,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 2,
+      "id": 32,
+      "value": 12,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 8,
+      "id": 33,
+      "value": 16,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 6,
+      "id": 34,
+      "value": 15,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 6,
+      "id": 35,
+      "value": 0,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 6,
+      "id": 36,
+      "value": 17,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 6,
+      "id": 37,
+      "value": 13,
       "date": "07-04-2022"
     }
   ]

@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import DatabaseService from '../components/DatabaseService';
 
 interface props {
     id: Number
@@ -18,17 +19,14 @@ export const AddNewLog = ({id}: props) => {
         <form onSubmit={(e) => {
             e.preventDefault();
             const logObject = { 
-                id: Number(id) + 1, 
+                id: Number(id), 
                 name: logName,
                 measure: logMeasure
             }
-            axios.post('http://localhost:3001/logs', logObject)
-            .then(response => {
-                console.log(response);
-            })
+            DatabaseService.postLog(logObject)
             setLogName(''); 
-            setLogMeasure(''); 
-            navigate('/')
+            setLogMeasure('');
+            navigate('/') 
         } }>
             <input name="Name"
                 value={logName}

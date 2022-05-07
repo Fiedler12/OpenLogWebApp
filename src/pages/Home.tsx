@@ -1,25 +1,30 @@
 import { Container, Fab, Grid, Link } from '@mui/material'
 import React, { useEffect, useState } from 'react'; 
+import DatabaseService from '../components/DatabaseService';
 import { FloatingActionButton } from '../components/FloatingActionButton';
 import { MyCard } from '../components/MyCard';
 
 
-
-interface logProps {
-    logs: any
+interface log {
+    id: Number,
+    name: string,
+    measure: string
 }
 
 
-export const Home = ({logs}: logProps) => {
-    const [currentLogs, setCurrentLogs] = useState(logs);
+export const Home = () => {
+    const [currentLogs, setCurrentLogs] = useState<log[]>([]);
+    async function getLogs() {
+        let logs = await DatabaseService.getLogs();
+        setCurrentLogs(logs)
+    }
     useEffect(() => {
-        console.log("getting logs")
-        setCurrentLogs(logs); 
-    }, [currentLogs]);
+        getLogs();
+    }, []);
     return (
         <><Container>
             <Grid container rowSpacing={4} columnSpacing={6} maxWidth="sm">
-                {logs.map((log: any) => {
+                {currentLogs.map((log: any) => {
                     return <Grid item xs={6} md={5}>
                             <Link href={'/log-overview/' + log.id}>
                             <MyCard
