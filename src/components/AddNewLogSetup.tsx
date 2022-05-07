@@ -19,47 +19,49 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 export const AddNewLogSetup = () => {
   return (
-    <Box sx={{ flexGrow: 1 }} className='leftgrid'>
+      <>
+        
+        <Box sx={{ flexGrow: 1 }} className='leftgrid'>
 
-    <Grid container spacing={0} >
+          <Grid container spacing={0}>
 
-    <Grid item xs={6} md={6}  >
-        <Item className='item1'>
-            <header>Add New Log Type</header>
-            <TextField id="textfield_1" label="Add New Log Type" />
-            <header>Insert Unit of New Log</header>
-            <TextField id="textfield_2" label="Insert unit" />
-        </Item>
+              <Grid item xs={6} md={6}>
+                  <Item className='item1'>
+                      <header>Add New Log Type</header>
+                      <TextField id="textfield_1" label="Add New Log Type" />
+                      <header>Insert Unit of New Log</header>
+                      <TextField id="textfield_2" label="Insert unit" />
+                  </Item>
 
-        <Item className='item2'>
-        <Button >
-            <Link to="/" style={{textDecoration:'none'}} >  Back </Link>
-            </Button>
+                  <Item className='item2'>
+                      <Button>
+                          <Link to="/" style={{ textDecoration: 'none' }}>  Back </Link>
+                      </Button>
 
-        <Button >
-            <Link to="/" style={{textDecoration:'none'}} >  Confirm </Link>
-            </Button>
-        </Item>
-    </Grid>
+                      <Button>
+                          <Link to="/" style={{ textDecoration: 'none' }}>  Confirm </Link>
+                      </Button>
+                  </Item>
+              </Grid>
 
 
-    <Grid item xs={6} md={6}>
-        <Item>
-            <img src='Run.jpg' className='run'></img>
-        </Item>
+              <Grid item xs={6} md={6}>
+                  <Item>
+                      <img src='Run.jpg' className='run'></img>
+                  </Item>
 
-        <Item>
-            <img src='food.jpg' className ='picture'></img>
-        </Item>
+                  <Item>
+                      <img src='food.jpg' className='picture'></img>
+                  </Item>
 
-        <Item>
-            <img src='statistik.jpg' className='picture'></img>
-        </Item>
+                  <Item>
+                      <img src='statistik.jpg' className='picture'></img>
+                  </Item>
 
-    </Grid>
-    
-</Grid>
-</Box>
+              </Grid>
+
+          </Grid>
+      </Box></>
 
     
   )

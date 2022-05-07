@@ -44,6 +44,11 @@
       "id": 9,
       "name": "Newtest",
       "measure": "NewUnit"
+    },
+    {
+      "id": 10,
+      "name": "new",
+      "measure": "new"
     }
   ],
   "values": [
