@@ -32,10 +32,12 @@ export const LogOverview = ({id}: props) => {
   const [values, setValues] = useState<value[]>([])
   const [newValue, setNewValue] = useState('')
   const [logs, setLogs] = useState<log[]>()
+
   async function getValues() {
     let currentValues = await DatabaseService.getValues(); 
     setValues(currentValues); 
   }
+
   async function getLogs() {
     let allLogs = await DatabaseService.getLogs();
     setLogs(allLogs); 
@@ -48,7 +50,7 @@ export const LogOverview = ({id}: props) => {
 
   useEffect(() => {
     getValues();
-  }, [setNewValue]); 
+  }, [newValue]); 
 
   return (
     <>

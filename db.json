@@ -44,6 +44,16 @@
       "id": 9,
       "name": "Newtest",
       "measure": "NewUnit"
+    },
+    {
+      "id": 10,
+      "name": "new",
+      "measure": "new"
+    },
+    {
+      "id": 11,
+      "name": "hi",
+      "measure": "ih"
     }
   ],
   "values": [
@@ -502,6 +512,48 @@
       "id": 76,
       "value": 50,
       "date": "06-04-2022"
+    },
+    {
+      "logId": 8,
+      "id": 77,
+      "value": 15,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 8,
+      "id": 78,
+      "value": 15,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 8,
+      "id": 79,
+      "value": 15,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 8,
+      "id": 80,
+      "value": 15,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 81,
+      "value": 16,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 82,
+      "value": 16,
+      "date": "07-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 83,
+      "value": 18,
+      "date": "07-04-2022"
     }
   ],
   "users": [
