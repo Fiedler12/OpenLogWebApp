@@ -1,61 +1,59 @@
+import { LoginSharp } from '@mui/icons-material'
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import DatabaseService from '../components/DatabaseService'
+import { LogEntry } from '../components/LogEntry'
 import { OverviewGraph } from '../components/OverviewGraph'
 import OverviewTable from '../components/OverviewTable'
-import DatabaseService from '../components/DatabaseService'
 
 interface props {
   id: Number
 }
 
-interface log {
+interface log { 
+  id: Number,
   name: string,
-  measure: string,
-  id: Number
+  measure: string
 }
 
 interface value {
-  logId: Number,
-  id: Number,
-  value: Number,
-  date: string
+  logId: Number
+    id: Number
+    value: Number
+    date: string 
 }
 
-export const LogOverview = ({ id }: props) => {
+
+export const LogOverview = ({id}: props) => {
   const logId = useParams().id
-  const [currentLog, setCurrentLog] = useState<log>();
+  let log: log | undefined;
   const current = new Date();
-  const [newValue, setNewValue] = useState('')
   const [values, setValues] = useState<value[]>([])
-  useEffect(() => {
-    getLog();
-  }, []);
-
-  async function postValue(value: {}) {
-    await DatabaseService.postValue(value)
-  }
-
-  async function getLog() {
-    let response = await DatabaseService.getLogs();
-    let log = response.find((n: any) => n.id === Number(logId))
-    setCurrentLog(log);
-  }
-
+  const [newValue, setNewValue] = useState('')
+  const [logs, setLogs] = useState<log[]>()
   async function getValues() {
-    let allValues: value[] = await DatabaseService.getValues();
-    let filtered = allValues.filter(value => value.logId === Number(logId))
-    setValues(filtered);
+    let currentValues = await DatabaseService.getValues(); 
+    setValues(currentValues); 
   }
+  async function getLogs() {
+    let allLogs = await DatabaseService.getLogs();
+    setLogs(allLogs); 
+  }
+
+  useEffect(() => {
+    getLogs();
+    log = logs?.find((n: any) => n.id === Number(logId))
+  }, []);
 
   useEffect(() => {
     getValues();
-  }, [newValue])
-
+  }, [setNewValue]); 
 
   return (
     <>
-      <h1>{currentLog?.name}</h1>
-      <h2>{currentLog?.measure}</h2>
+      <h1>{log?.name}</h1>
+      <h2>{log?.measure}</h2>
       <br />
       <form onSubmit={(e) => {
         e.preventDefault();
@@ -65,8 +63,7 @@ export const LogOverview = ({ id }: props) => {
           value: Number(newValue),
           date: ('0' + current.getDate()).slice(-2) + '-' + ('0' + current.getMonth()).slice(-2) + '-' + current.getFullYear()
         }
-        console.log(newValueObject)
-        postValue(newValueObject);
+        DatabaseService.postValue(newValueObject)
         setNewValue('')
       }}>
         <input name="Value"
