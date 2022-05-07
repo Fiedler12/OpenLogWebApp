@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { CartesianGrid, LineChart, Line, XAxis, YAxis } from 'recharts';
 import axios from 'axios'; 
 
 interface graphProps {
-    receivedValues: value[]
-}
-
-interface value {
-    logId: Number
     id: Number
-    value: Number
-    date: string 
 }
 
-export const OverviewGraph = ({receivedValues}: graphProps) => {
-    const [values, setValues] = useState<value[]>([]); 
-    useEffect(() => {
-        setValues(receivedValues);  
-    }, [receivedValues]);    
+const response = axios.get('http://localhost:3001/values')
+
+export const OverviewGraph = ({id}: graphProps) => {
+    const [values, setValues] = useState([]); 
+    response.then(async reponse => {
+        setValues((await response).data); 
+    })
+    const realValues = values.filter((value: { logId: any; }) => Number(value.logId) === id)
+    console.log(realValues)
     return (
         <><div
             style={{
@@ -25,7 +22,7 @@ export const OverviewGraph = ({receivedValues}: graphProps) => {
             }} /><LineChart className='overviewgraph'
                 width={1200}
                 height={600}
-                data={values}
+                data={realValues}
                 margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
             >
                 <XAxis dataKey="date" />

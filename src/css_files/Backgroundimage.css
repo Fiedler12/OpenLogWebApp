@@ -1,7 +1,10 @@
 .backgroundstuff{
-background-image: url(/public/islandimage.png);
+background-image: url(/public/hvide_mursten.jpg);
 background-repeat: 'no-repeat';
-    background-size: cover;
+background-attachment: fixed;
+background-size: cover;
+height: 100%;
+width: 100%;
 
 
 }

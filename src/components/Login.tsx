@@ -1,26 +1,18 @@
-import { userInfo } from 'os';
 import {useState} from 'react'
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 
 const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
 
-// const jwt = require('jsonwebtoken')
-// const bcrypt = require('bcrypt')
 
 export default function Login(props: { insertId: (arg0: any) => any; }) { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
-  const [userId, setUserId] = useState('')
+  // const [userId, setUserId] = useState('')
 
   const onLoginSuccess = (res: any ) => {
       console.log('[Login Success] currentUser:', res.profileObj);
       setShowloginButton(false);
       setShowlogoutButton(true);
-
-      // const response = axios.get('http://localhost:3001/users').then(response => {
-      //   setUsers(response.data)
-      // }
-
   };
 
   const onLoginFailure = (res: any) => {
