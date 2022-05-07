@@ -31,7 +31,6 @@
       "measure": "NewUnit"
     },
     {
-<<<<<<< HEAD
       "id": 8,
       "name": "Im da best",
       "measure": "poopoo"
@@ -50,11 +49,6 @@
       "id": 11,
       "name": "hi",
       "measure": "ih"
-=======
-      "id": 10,
-      "name": "new",
-      "measure": "new"
->>>>>>> master
     }
   ],
   "values": [
@@ -224,7 +218,6 @@
       "logId": 1,
       "id": 28,
       "value": 15,
-<<<<<<< HEAD
       "date": "03-04-2022"
     },
     {
@@ -578,9 +571,6 @@
       "name": "Jill Doe",
       "email": "jilldoe@doe",
       "id": 4
-=======
-      "date": "02-04-2022"
->>>>>>> master
     }
   ]
 }

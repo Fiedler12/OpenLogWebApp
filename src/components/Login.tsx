@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import { userInfo } from 'os';
 import {useState, useEffect} from 'react'
-=======
-import {useState} from 'react'
->>>>>>> master
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 import DatabaseService from './DatabaseService';
 
@@ -23,17 +19,7 @@ export interface _users {
 export default function Login(startingUsers: _user[]) { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
-<<<<<<< HEAD
   const [users, setUsers] = useState<_user[]>(startingUsers);
-=======
-  // const [userId, setUserId] = useState('')
-
-  const onLoginSuccess = (res: any ) => {
-      console.log('[Login Success] currentUser:', res.profileObj);
-      setShowloginButton(false);
-      setShowlogoutButton(true);
-  };
->>>>>>> master
 
   
   const onLoginFailure = (res: any) => {
