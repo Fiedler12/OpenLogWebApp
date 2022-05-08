@@ -17,14 +17,19 @@ export default function Login() {
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
   const [users, setUsers] = useState<_user[]>([]);
+  
+  async function getUsers() {
+    console.log(users)
+    let allUsers = await DatabaseService.getUsers();
+    setUsers(allUsers);
+    console.log("users:", users)
+  }
 
-  useEffect(() => {
-    getUsers()
-  }, []) 
+  
   const onLoginFailure = (res: any) => {
     console.log('[Login failed] res:', res);
   };
-
+  
   const onLogoutSuccess = () => {
     alert('Logout made successfull: userid:') ;
     console.clear();
@@ -33,18 +38,13 @@ export default function Login() {
     
     
   }
-
-  async function getUsers() {
-    let allUsers = await DatabaseService.getUsers();
-    setUsers(allUsers);
-    console.log('all users', allUsers)
-    console.log(' users', users)
-  }
-
+  
+  
   async function getUser(id: Number) {
     return await DatabaseService.getUser(id);
   }
-
+  
+  
   const onLoginSuccess = async (res: any ) => {
 
     console.log('[Login Success] currentUser:', res.profileObj);
@@ -65,6 +65,10 @@ export default function Login() {
     }
 
 };
+
+useEffect(() => {
+    getUsers();
+  }, [showloginButton]) 
 
 return (
     <div>
