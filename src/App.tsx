@@ -15,6 +15,7 @@ import DatabaseService from './components/DatabaseService';
 
 //testing push
 function App() {
+  const [user, setUser] = useState(null)
   const [logs, setLogs] = useState([]);
   const [id, setId] = useState(Number)
 
