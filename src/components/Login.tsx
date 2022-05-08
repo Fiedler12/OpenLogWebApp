@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { userInfo } from 'os';
+
 import {useState, useEffect} from 'react'
-=======
-import {useState} from 'react'
->>>>>>> 0669e59a7ac150cf2d118a2aae8ae8c656a78f91
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 import DatabaseService from './DatabaseService';
 
@@ -11,21 +7,20 @@ const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleuserc
 
 
 export type _user = {
-  name: String,
   id: Number,
+  name: String,
   email: String;
 }
 
-export interface _users {
-  users: _user[]
-}
 
-export default function Login(startingUsers: _user[]) { 
+export default function Login() { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
-  const [users, setUsers] = useState<_user[]>(startingUsers);
+  const [users, setUsers] = useState<_user[]>([]);
 
-  
+  useEffect(() => {
+    getUsers()
+  }, []) 
   const onLoginFailure = (res: any) => {
     console.log('[Login failed] res:', res);
   };
@@ -39,7 +34,12 @@ export default function Login(startingUsers: _user[]) {
     
   }
 
-  
+  async function getUsers() {
+    let allUsers = await DatabaseService.getUsers();
+    setUsers(allUsers);
+    console.log('all users', allUsers)
+    console.log(' users', users)
+  }
 
   async function getUser(id: Number) {
     return await DatabaseService.getUser(id);

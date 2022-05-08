@@ -34,8 +34,12 @@ function App() {
   async function getUsers() {
     let allUsers = await DatabaseService.getUsers();
     setUsers(allUsers);
+    console.log("app getUsers", allUsers, users)
   }
+
+  
   return (
+
     <div  className='backgroundstuff'>
       
     <BrowserRouter>
