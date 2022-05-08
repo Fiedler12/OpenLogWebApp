@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { Login, _user} from '../components/Login'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useRef} from 'react'
 import DatabaseService from '../components/DatabaseService';
 
 
 const LoginPage = (props: { onLogin: (arg0: any) => void; }) => {
 
-  const [users, setUsers] = useState<_user[]>([]);
+  const users = useRef([]);
   // const navigate = useNavigate();
 
   const onLoginSuccess = (user: Number) => {
@@ -14,20 +14,21 @@ const LoginPage = (props: { onLogin: (arg0: any) => void; }) => {
   }
 
   async function getUsers() {
-    let allUsers = await DatabaseService.getUsers();
-    console.log("loginpage get", allUsers)
-    setUsers(allUsers)
+    users.current = await DatabaseService.getUsers();
+    console.log('loginPage ' , users)
   }
 
   useEffect( () => {
+    
     getUsers();
+    
     console.log("loginpage", users)
   }, [])
 
 
   return (
     <div className="LoginPage">
-      <Login onLogin={onLoginSuccess} importUsers={users}/>
+      <Login onLogin={onLoginSuccess} importUsers={users.current}/>
     </div>
   );
 }

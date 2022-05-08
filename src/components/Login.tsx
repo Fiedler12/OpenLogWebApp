@@ -1,5 +1,5 @@
 
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 import DatabaseService from './DatabaseService';
 
@@ -16,7 +16,7 @@ export type _user = {
 export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => void; }) => { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
-  const [users, setUsers] = useState<_user[]>(props.importUsers);
+  const users = useRef(props.importUsers);
   console.log('import', props.importUsers)
   const [user, setUser] = useState<_user>()
   const [id, setId] = useState(Number)
@@ -24,17 +24,14 @@ export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => v
   //const [user, setUser] = useState<_user>();
 
 
-  async function getUsers() {
-    setUsers(props.importUsers)
+ useEffect(()  => {
+    users.current = (props.importUsers)
     console.log('login get',users)
-  }
+  });
 
-  useEffect(() => {
-    getUsers();
-  }, [props.importUsers]) 
 
   function getId () {
-    setId(users.length +1)
+    setId(users.current.length +1)
   }
 
   
@@ -57,6 +54,9 @@ export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => v
   
   
   const onLoginSuccess = async (res: any ) => {
+    while(users.current.length === 0){
+      console.log("waiting")
+    }
     console.log('[Login Success] currentUser:', res.profileObj);
     console.log("user content created!", res.profileObj.email)
     const emailAdd = res.profileObj.email;
@@ -64,28 +64,20 @@ export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => v
     setShowloginButton(false);
     setShowlogoutButton(true);
     let isUser= false;
-    if(users.length === 0){
-      setTimeout(() => {  console.log("World!"); },1000);
-      getUsers();
-    }
     console.log('local: ', users)
-    // users.forEach(u => {
-    //   console.log(u)
-    //   console.log('emails: ', u.email)
-    //     if(emailAdd === u.email && !isUser){
-    //       console.log(u.email, u.id  + " is an user")
-    //       isUser = true;
-    //       setUser(u)
-    //       setId(Number(u.id)) 
-    //     }
-    // }) 
-    // if(user === undefined) {
-    //     console.log(`${emailAdd} is not user`)
-    //     createUser(emailAdd,username )
-    // }
-    // console.log('user is: ', user)
-    // console.log('id being passed: ', id)
-    // props.onLogin(id)
+    const user = users.current.find( u => 
+        u.email=== emailAdd)
+    if(user=== undefined) {
+        console.log(`${emailAdd} is not user`)
+        createUser(emailAdd,username )
+    }
+    else{
+      setId(Number(user.id))
+    }
+    console.log('user is: ', user)
+    console.log('id being passed: ', user!!.id)
+    
+    props.onLogin(id)
 };
 
 async function createUser (emailAddress: String, username: String)   {
