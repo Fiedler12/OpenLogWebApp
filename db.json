@@ -276,6 +276,18 @@
       "id": 40,
       "value": 55,
       "date": "08-04-2022"
+    },
+    {
+      "logId": 6,
+      "id": 41,
+      "value": 13,
+      "date": "08-04-2022"
+    },
+    {
+      "logId": 6,
+      "id": 42,
+      "value": 15,
+      "date": "08-04-2022"
     }
   ],
   "users": [
@@ -303,6 +315,11 @@
       "name": "Tobias Borgstrøm",
       "email": "tborgstroem@gmail.com",
       "id": 5
+    },
+    {
+      "name": "Oliver Fiedler",
+      "email": "o.lyngholm@gmail.com",
+      "id": 6
     }
   ]
 }

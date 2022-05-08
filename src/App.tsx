@@ -33,6 +33,7 @@ function App() {
   const loginSucces = (user: React.SetStateAction<string>) => {
     setUser(user); 
     console.log("login passed to app")
+    console.log(user); 
   }
 
   
