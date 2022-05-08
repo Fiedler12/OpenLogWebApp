@@ -17,12 +17,19 @@ export default function Login() {
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
   const [users, setUsers] = useState<_user[]>([]);
-  
+  const [user, setUser] = useState<_user>();
+
+
   async function getUsers() {
     console.log(users)
     let allUsers = await DatabaseService.getUsers();
     setUsers(allUsers);
     console.log("users:", users)
+  }
+
+  function getId (): Number {
+    return users.length +1
+    
   }
 
   
@@ -49,20 +56,37 @@ export default function Login() {
 
     console.log('[Login Success] currentUser:', res.profileObj);
     console.log("user content created!", res.profileObj.email)
+    const emailAdd = res.profileObj.email;
+    const username = res.profileObj.name;
     setShowloginButton(false);
     setShowlogoutButton(true);
     let isUser= false;
-    console.log(users)
+    console.log('local: ', users)
     users.forEach(u => {
       console.log(u)
-        if(res.profileObj.email === u.email ){
+      console.log('emails: ', u.email)
+        if(emailAdd === u.email ){
           console.log(u.email + " is an user")
           isUser = true;
+          setUser(u);
         }
     }) 
     if(!isUser){
-        console.log(`${res.profileOb.email} is not user`)
+        console.log(`${emailAdd} is not user`)
+        createUser(emailAdd,username )
+        
     }
+
+    console.log(user, ' is the current user')
+};
+
+async function createUser (emailAddress: String, username: String)   {
+  const response = await DatabaseService.addUser({
+    getId,
+    name: username,
+    email : emailAddress,
+  })
+  console.log(response)
 
 };
 

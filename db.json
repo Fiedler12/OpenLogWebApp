@@ -270,6 +270,12 @@
       "id": 39,
       "value": 12,
       "date": "08-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 40,
+      "value": 55,
+      "date": "08-04-2022"
     }
   ],
   "users": [
@@ -292,6 +298,11 @@
       "id": 4,
       "name": "Jill Doe",
       "email": "jilldoe@doe"
+    },
+    {
+      "name": "Tobias Borgstrøm",
+      "email": "tborgstroem@gmail.com",
+      "id": 5
     }
   ]
 }
