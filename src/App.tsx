@@ -15,7 +15,7 @@ import DatabaseService from './components/DatabaseService';
 
 //testing push
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState('')
   const [logs, setLogs] = useState([]);
   const [id, setId] = useState(Number)
   const [users, setUsers] = useState([]);
@@ -30,11 +30,9 @@ function App() {
     getId();
   }, []);
   
-
-  async function getUsers() {
-    let allUsers = await DatabaseService.getUsers();
-    setUsers(allUsers);
-    console.log("app getUsers", allUsers, users)
+  const loginSucces = (user: React.SetStateAction<string>) => {
+    setUser(user); 
+    console.log("login passed to app")
   }
 
   
@@ -48,7 +46,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="log-cycle" element={<LogCycle />} />
-          <Route path="login" element={<LoginPage {...users} />} />
+          <Route path="login" element={<LoginPage onLogin={loginSucces} />} />
           <Route path="settings" element={<Settings />} />
           <Route path='log-overview/:id' element={<LogOverview />} />
           <Route path='add-new-log' element={<AddNewLog id={logs.length}/>} />

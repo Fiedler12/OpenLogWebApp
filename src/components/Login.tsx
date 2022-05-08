@@ -13,32 +13,31 @@ export type _user = {
 }
 
 
-export default function Login() { 
+export const Login = (props: { onLogin: (arg0: string) => void; }) => { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
   const [users, setUsers] = useState<_user[]>([]);
+  const [user, setUser] = useState('')
   
   async function getUsers() {
-    console.log(users)
+    console.log("setting user")
     let allUsers = await DatabaseService.getUsers();
     setUsers(allUsers);
-    console.log("users:", users)
+    console.log(users)
   }
 
   
   const onLoginFailure = (res: any) => {
     console.log('[Login failed] res:', res);
+
   };
   
   const onLogoutSuccess = () => {
     alert('Logout made successfull: userid:') ;
     console.clear();
     setShowloginButton(true);
-    setShowlogoutButton(false);
-    
-    
+    setShowlogoutButton(false);    
   }
-  
   
   async function getUser(id: Number) {
     return await DatabaseService.getUser(id);
@@ -46,7 +45,6 @@ export default function Login() {
   
   
   const onLoginSuccess = async (res: any ) => {
-
     console.log('[Login Success] currentUser:', res.profileObj);
     console.log("user content created!", res.profileObj.email)
     setShowloginButton(false);
@@ -63,7 +61,8 @@ export default function Login() {
     if(!isUser){
         console.log(`${res.profileOb.email} is not user`)
     }
-
+    setUser('Oliver')
+    props.onLogin(user); 
 };
 
 useEffect(() => {
