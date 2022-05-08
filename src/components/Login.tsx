@@ -13,11 +13,12 @@ export type _user = {
 }
 
 
-export const Login = (props: { onLogin: (arg0: string) => void; }) => { 
+export const Login = (props: { onLogin: (arg0: Number) => void; }) => { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
   const [users, setUsers] = useState<_user[]>([]);
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState<_user>()
+  const [id, setId] = useState(Number)
   
   //const [user, setUser] = useState<_user>();
 
@@ -29,9 +30,8 @@ export const Login = (props: { onLogin: (arg0: string) => void; }) => {
     console.log(users)
   }
 
-  function getId (): Number {
-    return users.length +1
-    
+  function getId () {
+    setId(users.length +1)
   }
 
   
@@ -52,6 +52,7 @@ export const Login = (props: { onLogin: (arg0: string) => void; }) => {
   }
   
   
+  
   const onLoginSuccess = async (res: any ) => {
     console.log('[Login Success] currentUser:', res.profileObj);
     console.log("user content created!", res.profileObj.email)
@@ -64,31 +65,31 @@ export const Login = (props: { onLogin: (arg0: string) => void; }) => {
     users.forEach(u => {
       console.log(u)
       console.log('emails: ', u.email)
-        if(emailAdd === u.email ){
+        if(emailAdd === u.email && !isUser){
           console.log(u.email + " is an user")
           isUser = true;
-          setUser('Oliver');
+          setUser(u)
+          setId(Number(u.id)) 
         }
     }) 
-    if(!isUser){
+    if(user === undefined) {
         console.log(`${emailAdd} is not user`)
         createUser(emailAdd,username )
-        
     }
-    setUser('Oliver')
-    props.onLogin(user); 
-
-    console.log(user, ' is the current user')
+    console.log('user is: ', user)
+    console.log('id being passed: ', id)
+    props.onLogin(id)
 };
 
 async function createUser (emailAddress: String, username: String)   {
+  getId(); 
   const response = await DatabaseService.addUser({
-    getId,
+    id,
     name: username,
     email : emailAddress,
   })
   console.log(response)
-
+  setUser(response); 
 };
 
 useEffect(() => {

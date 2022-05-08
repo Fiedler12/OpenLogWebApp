@@ -15,7 +15,7 @@ import DatabaseService from './components/DatabaseService';
 
 //testing push
 function App() {
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState(Number)
   const [logs, setLogs] = useState([]);
   const [id, setId] = useState(Number)
   const [users, setUsers] = useState([]);
@@ -30,10 +30,10 @@ function App() {
     getId();
   }, []);
   
-  const loginSucces = (user: React.SetStateAction<string>) => {
-    setUser(user); 
+  const loginSucces = (user: React.SetStateAction<Number>) => {
+    setUser(Number(user)); 
     console.log("login passed to app")
-    console.log(user); 
+    console.log('id is: ', user); 
   }
 
   

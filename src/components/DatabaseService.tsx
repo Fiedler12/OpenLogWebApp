@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {_user} from '../components/Login'
 
 const DatabaseService = {
 
@@ -36,11 +37,11 @@ const DatabaseService = {
       })
       return data;
   },
-  addUser: async function(user: {}) {
+  addUser: async function(user: _user) {
       const status = axios.post('http://localhost:3001/users', user).then(response => {
           console.log(response.data)
       })
-      return status;
+      return user; 
   },
   deleteUser:async function(id: Number){
       const status = axios.delete('http://localhost:3001/users/' + id).then(response => {

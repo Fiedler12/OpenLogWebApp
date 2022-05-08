@@ -5,7 +5,7 @@ const LoginPage = (props: { onLogin: (arg0: any) => void; }) => {
 
   const navigate = useNavigate();
 
-  const onLoginSuccess = (user: any) => {
+  const onLoginSuccess = (user: Number) => {
     props.onLogin(user)
   }
 
