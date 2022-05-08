@@ -28,6 +28,7 @@ function App() {
   useEffect(() => {
     getId();
   }, []);
+  
 
   return (
     <div  className='backgroundstuff'>
