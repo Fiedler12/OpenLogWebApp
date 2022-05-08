@@ -1,0 +1,17 @@
+.titel{
+    text-align: left;
+    font-size: 50px;
+    font-weight: 40px;
+    color: #404040;
+}
+ul{
+    list-style-type: square;
+    color: #404040;
+    font-size: 30px; 
+    
+}
+li{
+background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/arrow.png") 0 50% no-repeat;
+list-style-type: none;
+padding-left: 12px;
+}

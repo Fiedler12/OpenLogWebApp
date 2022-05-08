@@ -2,22 +2,26 @@ import React, { useEffect, useState } from 'react'
 import { CartesianGrid, LineChart, Line, XAxis, YAxis } from 'recharts';
 import axios from 'axios'; 
 
-interface graphProps {
+interface props {
     receivedValues: value[]
 }
 
 interface value {
-    logId: Number
-    id: Number
-    value: Number
-    date: string 
+    id: Number,
+    logId: Number,
+    value: Number,
+    date: string
 }
 
-export const OverviewGraph = ({receivedValues}: graphProps) => {
+const response = axios.get('http://localhost:3001/values')
+
+export const OverviewGraph = ({receivedValues}: props) => {
     const [values, setValues] = useState<value[]>([]); 
+
     useEffect(() => {
-        setValues(receivedValues);  
-    }, [receivedValues]);    
+        setValues(receivedValues); 
+    }, [receivedValues])
+
     return (
         <><div
             style={{

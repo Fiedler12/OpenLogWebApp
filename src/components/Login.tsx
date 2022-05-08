@@ -1,12 +1,14 @@
+<<<<<<< HEAD
 import { userInfo } from 'os';
 import {useState, useEffect} from 'react'
+=======
+import {useState} from 'react'
+>>>>>>> 0669e59a7ac150cf2d118a2aae8ae8c656a78f91
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 import DatabaseService from './DatabaseService';
 
 const clientId = '144917246358-2cq17d3sf233b3rj9p5dluack482s1tb.apps.googleusercontent.com'
 
-// const jwt = require('jsonwebtoken')
-// const bcrypt = require('bcrypt')
 
 export type _user = {
   name: String,

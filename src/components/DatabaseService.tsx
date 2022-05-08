@@ -53,7 +53,11 @@ const DatabaseService = {
           console.log(response.data)
       })
       return data;
+  },
+  getValueLength: async function() {
+      const data = this.getValues; 
+      return data.length; 
   }
-}; 
+};
 
 export default DatabaseService; 

@@ -27,23 +27,13 @@
     },
     {
       "id": 6,
-      "name": "Test",
-      "measure": "Test"
+      "name": "NewLog",
+      "measure": "NewUnit"
     },
     {
       "id": 7,
-      "name": "Newtest",
-      "measure": "NewUnit"
-    },
-    {
-      "id": 8,
-      "name": "Im da best",
-      "measure": "poopoo"
-    },
-    {
-      "id": 9,
-      "name": "Newtest",
-      "measure": "NewUnit"
+      "name": "fj",
+      "measure": "jf"
     }
   ],
   "values": [
@@ -210,298 +200,76 @@
       "date": "02-04-2022"
     },
     {
-      "logId": 4,
+      "logId": 1,
       "id": 28,
       "value": 15,
-      "date": "03-04-2022"
+      "date": "02-04-2022"
     },
     {
-      "logId": 6,
+      "logId": 1,
       "id": 29,
       "value": 15,
-      "date": "03-04-2022"
+      "date": "07-04-2022"
     },
     {
-      "logId": 6,
+      "logId": 1,
       "id": 30,
-      "value": 17,
-      "date": "03-04-2022"
+      "value": 15,
+      "date": "07-04-2022"
     },
     {
-      "logId": 6,
+      "logId": 2,
       "id": 31,
-      "value": 20,
-      "date": "03-04-2022"
+      "value": 15,
+      "date": "07-04-2022"
     },
     {
-      "logId": 6,
+      "logId": 2,
       "id": 32,
-      "value": 30,
-      "date": "03-04-2022"
+      "value": 12,
+      "date": "07-04-2022"
     },
     {
-      "logId": 6,
+      "logId": 8,
       "id": 33,
-      "value": 50,
-      "date": "03-04-2022"
+      "value": 16,
+      "date": "07-04-2022"
     },
     {
       "logId": 6,
       "id": 34,
-      "value": 10,
-      "date": "03-04-2022"
+      "value": 15,
+      "date": "07-04-2022"
     },
     {
       "logId": 6,
       "id": 35,
-      "value": 20,
-      "date": "03-04-2022"
+      "value": 0,
+      "date": "07-04-2022"
     },
     {
       "logId": 6,
       "id": 36,
-      "value": 25,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 37,
       "value": 17,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 38,
-      "value": 20,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 39,
-      "value": 30,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 40,
-      "value": 100,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 41,
-      "value": 75,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 42,
-      "value": 50,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 43,
-      "value": 1,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 44,
-      "value": 2,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 45,
-      "value": 3,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 46,
-      "value": 4,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 47,
-      "value": 5,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 48,
-      "value": 6,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 49,
-      "value": 7,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 50,
-      "value": 8,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 51,
-      "value": 15,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 3,
-      "id": 52,
-      "value": 0,
-      "date": "03-04-2022"
+      "date": "07-04-2022"
     },
     {
       "logId": 6,
-      "id": 53,
-      "value": null,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 8,
-      "id": 54,
-      "value": 20,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 8,
-      "id": 55,
-      "value": 3,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 8,
-      "id": 56,
-      "value": 25,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 8,
-      "id": 57,
-      "value": 10,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 8,
-      "id": 58,
-      "value": 15,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 8,
-      "id": 59,
-      "value": 17,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 5,
-      "id": 60,
-      "value": 16,
-      "date": "03-04-2022"
-    },
-    {
-      "logId": 1,
-      "id": 61,
-      "value": 15,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 1,
-      "id": 62,
-      "value": 16,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 1,
-      "id": 63,
-      "value": 12,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 1,
-      "id": 64,
+      "id": 37,
       "value": 13,
-      "date": "06-04-2022"
+      "date": "07-04-2022"
     },
     {
       "logId": 1,
-      "id": 65,
-      "value": 17,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 66,
-      "value": 15,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 67,
-      "value": 17,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 68,
-      "value": 19,
-      "date": "06-04-2022"
+      "id": 38,
+      "value": 14,
+      "date": "08-04-2022"
     },
     {
       "logId": 1,
-      "id": 69,
-      "value": 16,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 1,
-      "id": 70,
-      "value": 29,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 71,
-      "value": 40,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 72,
-      "value": 15,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 73,
-      "value": 20,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 74,
-      "value": 30,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 75,
-      "value": 10,
-      "date": "06-04-2022"
-    },
-    {
-      "logId": 2,
-      "id": 76,
-      "value": 50,
-      "date": "06-04-2022"
+      "id": 39,
+      "value": 12,
+      "date": "08-04-2022"
     }
   ],
   "users": [

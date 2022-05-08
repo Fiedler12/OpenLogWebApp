@@ -6,36 +6,30 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useState } from 'react';
-import DatabaseService from './DatabaseService';
+import axios from 'axios'; 
+import { useEffect, useState } from 'react';
 
 
 
-interface tableProps {
+interface props {
     receivedValues: value[]
 }
 
 interface value {
-    logId: Number
-    id: Number
-    value: Number
-    date: string 
+    id: Number,
+    logId: Number,
+    value: Number,
+    date: string
 }
 
-export default function OverviewTable({receivedValues}: tableProps) {
+
+export default function OverviewTable({receivedValues}: props) {
     const [values, setValues] = useState<value[]>([]); 
-    React.useEffect(() => {
+    
+    useEffect(() => {
         setValues(receivedValues)
     }, [receivedValues])
 
-    const handleCellClick = (e: value) => {
-        deleteLog(e); 
-    }
-
-
-    async function deleteLog(value: value) {
-        await DatabaseService.deleteValue(value);
-    }
     return (
         <TableContainer className="overviewTable" component={Paper}>
             <Table id="fix-head" sx={{ maxWidth: 400 }} aria-label="simple table">
@@ -50,7 +44,7 @@ export default function OverviewTable({receivedValues}: tableProps) {
                         <TableRow
                         sx={{ '&:last-child td, &:last-child th': { border: 0 }}}
                         >
-                            <TableCell component="th" scope="row" onClick={() => handleCellClick(row)}>
+                            <TableCell component="th" scope="row">
                                 {row.value}
                             </TableCell>
                             <TableCell align='right'>{row.date}</TableCell>
