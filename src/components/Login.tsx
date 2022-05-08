@@ -13,10 +13,11 @@ export type _user = {
 }
 
 
-export const Login = (props: { onLogin: (arg0: Number) => void; }) => { 
+export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => void; }) => { 
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
-  const [users, setUsers] = useState<_user[]>([]);
+  const [users, setUsers] = useState<_user[]>(props.importUsers);
+  console.log('import', props.importUsers)
   const [user, setUser] = useState<_user>()
   const [id, setId] = useState(Number)
   
@@ -24,11 +25,13 @@ export const Login = (props: { onLogin: (arg0: Number) => void; }) => {
 
 
   async function getUsers() {
-    console.log("setting user")
-    let allUsers = await DatabaseService.getUsers();
-    setUsers(allUsers);
-    console.log(users)
+    setUsers(props.importUsers)
+    console.log('login get',users)
   }
+
+  useEffect(() => {
+    getUsers();
+  }, [props.importUsers]) 
 
   function getId () {
     setId(users.length +1)
@@ -61,24 +64,28 @@ export const Login = (props: { onLogin: (arg0: Number) => void; }) => {
     setShowloginButton(false);
     setShowlogoutButton(true);
     let isUser= false;
-    console.log('local: ', users)
-    users.forEach(u => {
-      console.log(u)
-      console.log('emails: ', u.email)
-        if(emailAdd === u.email && !isUser){
-          console.log(u.email + " is an user")
-          isUser = true;
-          setUser(u)
-          setId(Number(u.id)) 
-        }
-    }) 
-    if(user === undefined) {
-        console.log(`${emailAdd} is not user`)
-        createUser(emailAdd,username )
+    if(users.length === 0){
+      setTimeout(() => {  console.log("World!"); },1000);
+      getUsers();
     }
-    console.log('user is: ', user)
-    console.log('id being passed: ', id)
-    props.onLogin(id)
+    console.log('local: ', users)
+    // users.forEach(u => {
+    //   console.log(u)
+    //   console.log('emails: ', u.email)
+    //     if(emailAdd === u.email && !isUser){
+    //       console.log(u.email, u.id  + " is an user")
+    //       isUser = true;
+    //       setUser(u)
+    //       setId(Number(u.id)) 
+    //     }
+    // }) 
+    // if(user === undefined) {
+    //     console.log(`${emailAdd} is not user`)
+    //     createUser(emailAdd,username )
+    // }
+    // console.log('user is: ', user)
+    // console.log('id being passed: ', id)
+    // props.onLogin(id)
 };
 
 async function createUser (emailAddress: String, username: String)   {
@@ -92,16 +99,14 @@ async function createUser (emailAddress: String, username: String)   {
   setUser(response); 
 };
 
-useEffect(() => {
-    getUsers();
-  }, [showloginButton]) 
 
+ 
 return (
     <div>
       { showloginButton ?
         <GoogleLogin
           clientId={clientId}
-          buttonText="Sing in"
+          buttonText="Sign in"
           onSuccess={onLoginSuccess}
           onFailure={onLoginFailure}
           cookiePolicy={'single_host_origin'}
