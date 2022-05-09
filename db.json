@@ -27,7 +27,7 @@
     {
       "id": 5,
       "userId": 5,
-      "name": "poops",
+      "name": "Medicin",
       "measure": "unit"
     },
     {
@@ -39,14 +39,20 @@
     {
       "id": 7,
       "userId": 5,
-      "name": "fj",
-      "measure": "jf"
+      "name": "Food",
+      "measure": "quantity"
     },
     {
       "userID": "5",
-      "name": "Søvn",
-      "measure": "timer",
+      "name": "Sleep",
+      "measure": "hours",
       "id": 8
+    },
+    {
+      "userId": "5",
+      "name": "testing",
+      "measure": "tt",
+      "id": 9
     }
   ],
   "values": [
@@ -349,6 +355,12 @@
       "id": 43,
       "value": 45,
       "date": "09-04-2022"
+    },
+    {
+      "logId": 1,
+      "id": 44,
+      "value": 12,
+      "date": "09-04-2022"
     }
   ],
   "users": [
@@ -396,6 +408,16 @@
       "id": 20,
       "name": "Oliver Fiedler",
       "email": "o.lyngholm@gmail.com"
+    },
+    {
+      "id": 21,
+      "name": "Isabel Jacobsen",
+      "email": "isabel.grimmig.jacobsen@gmail.com"
+    },
+    {
+      "id": 22,
+      "name": "Isabel Jacobsen",
+      "email": "isabel.grimmig.jacobsen@gmail.com"
     }
   ]
 }
