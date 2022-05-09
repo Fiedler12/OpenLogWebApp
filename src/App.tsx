@@ -8,7 +8,6 @@ import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
 import { AddNewLog } from './pages/AddNewLog';
 import './css_files/Backgroundimage.css'
-import axios from 'axios'; 
 import DatabaseService from './components/DatabaseService';
 
 

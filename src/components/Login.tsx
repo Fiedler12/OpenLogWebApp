@@ -1,5 +1,5 @@
 
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import {GoogleLogin, GoogleLogout} from 'react-google-login'
 import DatabaseService from './DatabaseService';
 
@@ -18,21 +18,16 @@ export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => v
   const [showloginButton, setShowloginButton]  = useState(true);
   const [showlogoutButton, setShowlogoutButton]  = useState(false);
   const [users, setUsers] = useState<_user[]>([]);
-  
-  //const [user, setUser] = useState<_user>();
+  const users = useRef(props.importUsers);
+  const [id, setId] = useState(Number)
 
-
-  function getUsers() {
-    setUsers(props.importUsers)
-  }
-
-  useEffect(() => {
-    getUsers();
-    console.log(users); 
-  }) 
+ useEffect(()  => {
+    users.current = (props.importUsers)
+    console.log('login get',users)
+  });
 
   function getId () {
-    setId(users.length +1)
+    setId(users.current.length +1)
   }
 
   
@@ -52,17 +47,20 @@ export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => v
   
   
   const onLoginSuccess = async (res: any ) => {
-    // while(users.current.length === 0){
-    //   console.log("waiting")
-    // }
+    while(users.current.length === 0){
+      console.log("waiting")
+    }
     const emailAdd = res.profileObj.email;
     const username = res.profileObj.name;
     setShowloginButton(false);
     setShowlogoutButton(true);
     let isUser= false;
+    
     const user = users.find( u => 
         u.email=== emailAdd)
+   
     if(user=== undefined) {
+        console.log(`${emailAdd} is not user`)
         createUser(emailAdd,username )
     }
     else{
