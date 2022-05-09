@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CartesianGrid, LineChart, Line, XAxis, YAxis } from 'recharts';
-import axios from 'axios'; 
 
 interface props {
     receivedValues: value[]
@@ -12,8 +11,6 @@ interface value {
     value: Number,
     date: string
 }
-
-const response = axios.get('http://localhost:3001/values')
 
 export const OverviewGraph = ({receivedValues}: props) => {
     const [values, setValues] = useState<value[]>([]); 

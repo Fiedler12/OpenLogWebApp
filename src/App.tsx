@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes, useMatch } from 'react-router-dom';
 import { AboutUs } from './pages/AboutUs';
 import { Home } from './pages/Home';
 import { Layout } from './pages/Layout';
-import { LogCycle } from './pages/LogCycle';
 import { LogOverview } from './pages/LogOverview';
 import LoginPage from './pages/LoginPage';
 import { Settings } from './pages/Settings';
@@ -30,10 +29,8 @@ function App() {
     getId();
   }, []);
   
-  const loginSucces = (user: React.SetStateAction<Number>) => {
+  const loginSucces = (user: Number) => {
     setUser(Number(user)); 
-    console.log("login passed to app")
-    console.log('id is: ', user); 
   }
 
   
@@ -46,7 +43,6 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="log-cycle" element={<LogCycle />} />
           <Route path="login" element={<LoginPage onLogin={loginSucces} />} />
           <Route path="settings" element={<Settings />} />
           <Route path='log-overview/:id' element={<LogOverview />} />

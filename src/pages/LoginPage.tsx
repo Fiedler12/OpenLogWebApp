@@ -1,29 +1,31 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Login, _user} from '../components/Login'
-import {useEffect, useState} from 'react'
 import DatabaseService from '../components/DatabaseService';
+import { Login, _user} from '../components/Login'
 
+interface user {
+  id: Number,
+  email: string,
+  name: string
+}
 
-const LoginPage = (props: { onLogin: (arg0: any) => void; }) => {
-
-  const [users, setUsers] = useState<_user[]>([]);
-  // const navigate = useNavigate();
+const LoginPage = (props: { onLogin: (arg0: Number) => void; }) => {
+  const [users, setUsers] = useState<user[]>([])
+  const navigate = useNavigate();
+  
 
   const onLoginSuccess = (user: Number) => {
     props.onLogin(user)
   }
 
   async function getUsers() {
-    let allUsers = await DatabaseService.getUsers();
-    console.log("loginpage get", allUsers)
-    setUsers(allUsers)
+    const allUsers = await DatabaseService.getUsers();
+    setUsers(allUsers);
   }
 
-  useEffect( () => {
+  useEffect (() => {
     getUsers();
-    console.log("loginpage", users)
   }, [])
-
 
   return (
     <div className="LoginPage">
