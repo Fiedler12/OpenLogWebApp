@@ -18,6 +18,7 @@ interface value {
     logId: Number,
     value: Number,
     date: string
+    
 }
 
 

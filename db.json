@@ -41,6 +41,12 @@
       "userId": 5,
       "name": "fj",
       "measure": "jf"
+    },
+    {
+      "userID": "5",
+      "name": "Søvn",
+      "measure": "timer",
+      "id": 8
     }
   ],
   "values": [
@@ -337,6 +343,12 @@
       "userId": 5,
       "value": 15,
       "date": "08-04-2022"
+    },
+    {
+      "logId": 8,
+      "id": 43,
+      "value": 45,
+      "date": "09-04-2022"
     }
   ],
   "users": [
