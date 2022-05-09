@@ -20,7 +20,7 @@ const LoginPage = (props: { onLogin: (arg0: Number) => void; }) => {
 
   async function getUsers() {
     const allUsers = await DatabaseService.getUsers();
-    setUsers(allUsers);
+    users.current = allUsers;
   }
 
   useEffect( () => {
