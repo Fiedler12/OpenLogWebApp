@@ -23,7 +23,6 @@ export const Login = (props: {importUsers:_user[] ; onLogin: (arg0: Number) => v
 
  useEffect(()  => {
     users.current = (props.importUsers)
-    console.log('login get',users)
   });
 
   function getId () {

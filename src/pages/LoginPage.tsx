@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Login, _user} from '../components/Login'
 import {useEffect, useState, useRef} from 'react'
 import DatabaseService from '../components/DatabaseService';
 import { Login, _user} from '../components/Login'
@@ -12,7 +10,6 @@ interface user {
 }
 
 const LoginPage = (props: { onLogin: (arg0: Number) => void; }) => {
-  const [users, setUsers] = useState<user[]>([])
   const navigate = useNavigate();
   const users = useRef([]);
   // const navigate = useNavigate();
