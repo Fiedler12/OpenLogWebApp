@@ -7,8 +7,6 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.1",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
@@ -55,6 +53,11 @@
     ]
   },
   "devDependencies": {
-    "json-server": "^0.17.0"
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.5",
+    "jest": "^28.1.0",
+    "jest-dom": "^4.0.0",
+    "json-server": "^0.17.0",
+    "react-test-renderer": "^18.1.0"
   }
 }

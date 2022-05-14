@@ -25,18 +25,18 @@ interface value {
 
 
 export const LogOverview = () => {
-  const logId = useParams().id
-  const [id, setId] = useState('')
-  let log: log | undefined;
+  const logId = Number(useParams().id); 
+  const [id, setId] = useState(Number);
+  const [log, setLog] = useState<log>(); 
   const current = new Date();
-  const [values, setValues] = useState<value[]>([])
-  const [newValue, setNewValue] = useState('')
-  const [logs, setLogs] = useState<log[]>()
+  const [values, setValues] = useState<value[]>([]);
+  const [newValue, setNewValue] = useState('');
+  const [logs, setLogs] = useState<log[]>();
 
   async function getValues() {
-    let currentValues = await DatabaseService.getValues(); 
+    let currentValues: value[] = await DatabaseService.getValues(); 
     setId(currentValues.length + 1)
-    setValues(currentValues); 
+    setValues(currentValues.filter(value => value.logId === logId)); 
   }
 
   async function getLogs() {
@@ -46,8 +46,11 @@ export const LogOverview = () => {
 
   useEffect(() => {
     getLogs();
-    log = logs?.find((n: any) => n.id === Number(logId))
   }, []);
+
+  useEffect(() => {
+    setLog(logs?.find((n: any) => n.id === Number(logId)))
+  }, [logs])
 
   useEffect(() => {
     getValues();

@@ -15,6 +15,12 @@ Runs the backend json web server so the databse can be accessed
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+you should also run: 
+
+### `npm run server`
+
+This starts the server. First you should run npm build though. 
+
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
